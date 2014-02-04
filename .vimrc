@@ -3,10 +3,6 @@ set nocompatible
 filetype plugin indent on
 execute pathogen#infect()
 
-" Allow per-directory vimrcs
-set exrc
-set secure
-
 " Mouse
 set mouse=a
 
