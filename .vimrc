@@ -2,6 +2,7 @@ syntax on
 set nocompatible
 filetype plugin indent on
 execute pathogen#infect()
+colorscheme slate
 
 " Mouse
 set mouse=a
