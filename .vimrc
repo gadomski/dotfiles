@@ -6,6 +6,9 @@ execute pathogen#infect()
 " Colorscheme
 colorscheme slate
 
+" lvimrc
+let g:localvimrc_sandbox = 0
+
 " Mouse
 set mouse=a
 
