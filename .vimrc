@@ -1,37 +1,42 @@
 syntax on
-set background=dark
+set nocompatible
 filetype plugin indent on
 execute pathogen#infect()
 
+" Allow per-directory vimrcs
+set exrc
+set secure
+
 " Mouse
 set mouse=a
+
+" Local leader
+let maplocalleader = ","
+
+" Omnicompletion
+if has("gui_running")
+    inoremap <C-Space> <C-x><C-o>
+else
+    inoremap <Nul> <C-x><C-o>
+endif
 
 " Big history
 set history=200
 
 " Spaces instead of tabs
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 " Hilights
 set hls
+set hlsearch
+
+" Searching
+set incsearch
 
 " Line numbers
 set number
-
-" Expansions
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
-" Statusline
-set laststatus=2
-set statusline=%<%f\    " Filename
-set statusline+=%w%h%m%r " Options
-set statusline+=%{fugitive#statusline()} "  Git Hotness
-set statusline+=\ [%{&ff}/%Y]            " filetype
-set statusline+=\ [%{getcwd()}]          " current dir
-set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 
 " Filetypes
 runtime! ftplugin/man.vim
@@ -43,3 +48,37 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Titlestring
+auto BufEnter * let &titlestring = "[". getcwd() . "] :: " . expand("%:p")
+
+" Dispatch stuff
+nnoremap <F9> :Make<CR>
+
+" vim-sunflower
+let g:sunflower_lat=40
+let g:sunflower_long=-105
+let g:sunflower_colorscheme_day='solarized'
+let g:sunflower_colorscheme_night='solarized'
+
+" Latex-box preferred
+let g:tex_flavor = "latex"
+let g:LatexBox_latexmk_async = 1
+let g:LatexBox_viewer = "open"
+let g:LatexBox_quickfix = 2
+
+" R stuff
+command! RCdUp :call g:SendCmdToR("setwd('..')")
+
+vmap <Space> <Plug>RDSendSelection
+nmap <Space> <Plug>RDSendLine
+vmap <localleader>rD :RCdUp<CR>
+nmap <localleader>rD :RCdUp<CR>
+vmap <localleader>da :RLoadPackage<CR>
+nmap <localleader>da :RLoadPackage<CR>
+nmap <LocalLeader>kr :call g:SendCmdToR('rm(list=ls(all.names=TRUE)); unlink("cache/*")')<CR>
+let vimrplugin_openpdf = 1
+
+
+" Other useful mappings
+nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
