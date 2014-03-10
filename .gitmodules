@@ -46,3 +46,21 @@
 [submodule "bundle/vim-localvimrc"]
 	path = bundle/vim-localvimrc
 	url = https://github.com/embear/vim-localvimrc.git
+[submodule "bundle/Dockerfile"]
+	path = bundle/Dockerfile
+	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "bundle/calendar-vim"]
+	path = bundle/calendar-vim
+	url = git://github.com/mattn/calendar-vim
+[submodule "bundle/nerdtree-execute"]
+	path = bundle/nerdtree-execute
+	url = https://github.com/ivalkeen/nerdtree-execute.git
+[submodule "bundle/riv.vim"]
+	path = bundle/riv.vim
+	url = https://github.com/Rykka/riv.vim.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "bundle/vim-ledger"]
+	path = bundle/vim-ledger
+	url = https://github.com/ledger/vim-ledger.git

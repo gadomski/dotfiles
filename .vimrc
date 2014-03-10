@@ -3,6 +3,10 @@ set nocompatible
 filetype plugin indent on
 execute pathogen#infect()
 
+" No mail maps
+" http://tuxproject.de/projects/vim/ftplugin/mail.vim
+let no_mail_maps = 1
+
 " Colorscheme
 colorscheme slate
 
@@ -40,16 +44,11 @@ set incsearch
 " Line numbers
 set number
 
+" Word wrapping
+set wrap linebreak nolist spell textwidth=0 wrapmargin=0
+
 " Filetypes
 runtime! ftplugin/man.vim
-
-" Trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
 
 " Titlestring
 auto BufEnter * let &titlestring = "[". getcwd() . "] :: " . expand("%:p")
@@ -84,3 +83,33 @@ let vimrplugin_openpdf = 1
 
 " Other useful mappings
 nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+
+" riv
+let g:riv_file_link_style = 2
+let crrel_lidar = { 'path': '~/Projects/crrel-lidar',}
+let g:riv_projects = [crrel_lidar]
+
+" vim-calendar
+let g:calendar_monday = 1
+
+" ledger
+let g:ledger_fillstring = '·'
+let g:ledger_maxwidth = 72
+nmap <localleader>la :call ledger#transaction_date_set(line('.'), 'auxiliary')<CR>
+vmap <localleader>la :call ledger#transaction_date_set(line('.'), 'auxiliary')<CR>
+nmap <localleader>lp :call ledger#transaction_date_set(line('.'), 'primary')<CR>
+vmap <localleader>lp :call ledger#transaction_date_set(line('.'), 'primary')<CR>
+nmap <localleader>l! :call ledger#transaction_state_set(line('.'), '!')<CR>
+vmap <localleader>l! :call ledger#transaction_state_set(line('.'), '!')<CR>
+nmap <localleader>l* :call ledger#transaction_state_set(line('.'), '*')<CR>
+vmap <localleader>l* :call ledger#transaction_state_set(line('.'), '*')<CR>
+nmap <localleader>l0 :call ledger#transaction_state_set(line('.'), '')<CR>
+vmap <localleader>l0 :call ledger#transaction_state_set(line('.'), '')<CR>
+nmap <localleader>lt :r! date "+\%Y/\%m/\%d"<CR>
+vmap <localleader>lt :r! date "+\%Y/\%m/\%d"<CR>
+
+" NERDtree
+let NERDTreeIgnore = ['\.pyc$']
