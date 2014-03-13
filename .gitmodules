@@ -64,3 +64,6 @@
 [submodule "bundle/vim-ledger"]
 	path = bundle/vim-ledger
 	url = https://github.com/ledger/vim-ledger.git
+[submodule "bundle/bbye"]
+	path = bundle/bbye
+	url = https://github.com/moll/vim-bbye.git
