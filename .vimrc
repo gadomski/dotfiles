@@ -114,3 +114,6 @@ vmap <localleader>lt :r! date "+\%Y/\%m/\%d"<CR>
 " NERDtree
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeChDirMode = 2
+
+" BBye
+nnoremap <localleader>bd :Bdelete<CR>
