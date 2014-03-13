@@ -45,7 +45,7 @@ set incsearch
 set number
 
 " Word wrapping
-set wrap linebreak nolist spell textwidth=0 wrapmargin=0
+set wrap linebreak nolist nospell textwidth=0 wrapmargin=0
 
 " Filetypes
 runtime! ftplugin/man.vim
@@ -113,3 +113,4 @@ vmap <localleader>lt :r! date "+\%Y/\%m/\%d"<CR>
 
 " NERDtree
 let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeChDirMode = 2
