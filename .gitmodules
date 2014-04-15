@@ -6,7 +6,7 @@
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/handlebars"]
 	path = bundle/handlebars
-	url = git://github.com/nono/vim-handlebars.git
+	url = https://github.com/nono/vim-handlebars.git
 [submodule "bundle/LaTeX-Box"]
 	path = bundle/LaTeX-Box
 	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
@@ -51,7 +51,7 @@
 	url = https://github.com/ekalinin/Dockerfile.vim.git
 [submodule "bundle/calendar-vim"]
 	path = bundle/calendar-vim
-	url = git://github.com/mattn/calendar-vim
+	url = https://github.com/mattn/calendar-vim.git
 [submodule "bundle/nerdtree-execute"]
 	path = bundle/nerdtree-execute
 	url = https://github.com/ivalkeen/nerdtree-execute.git
