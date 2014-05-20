@@ -102,3 +102,17 @@ let NERDTreeChDirMode = 2
 
 " BBye
 nnoremap <localleader>bd :Bdelete<CR>
+
+" Extradite
+let g:extradite_resize = 0
+let g:extradite_showhash = 1
+
+" DoxygenToolkit
+let g:DoxygenToolkit_authorName="Pete Gadomski <pete.gadomski@gmail.com"
+let g:DoxygenToolkit_cinoptions="^-s"
+let g:DoxygenToolkit_commentType="C++"
+let g:DoxygenToolkit_briefTag_pre=""
+" let g:load_doxygen_syntax=1
+
+" Default makeprg
+set makeprg=cd\ build\ &&\ make\ -j\ 3

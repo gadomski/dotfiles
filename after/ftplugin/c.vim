@@ -1,2 +1,3 @@
-setlocal comments-=://
-setlocal comments+=f://
+set comments-=://
+set comments+=:///
+set comments+=://
