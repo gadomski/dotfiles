@@ -17,7 +17,8 @@ let g:localvimrc_persistent = 2
 " Mouse
 set mouse=a
 
-" Local leader
+" Leaders
+let mapleader=","
 let maplocalleader = ","
 
 " Omnicompletion
@@ -66,6 +67,7 @@ let g:sunflower_colorscheme_night='solarized'
 " Latex-box preferred
 let g:tex_flavor = "latex"
 let g:LatexBox_latexmk_async = 1
+let g:LatexBox_latexmk_preview_continuously = 2
 let g:LatexBox_viewer = "open"
 let g:LatexBox_quickfix = 2
 
@@ -114,5 +116,12 @@ let g:DoxygenToolkit_commentType="C++"
 let g:DoxygenToolkit_briefTag_pre=""
 " let g:load_doxygen_syntax=1
 
-" Default makeprg
-set makeprg=cd\ build\ &&\ make\ -j\ 3
+" Syntastic
+let g:syntastic_mode_map = {'mode': 'passive'}
+let g:syntastic_javascript_checkers = ['jslint']
+
+" CtrlP
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+
+" NERDTree Open
+let g:nerdtree_plugin_open_cmd = 'open'

@@ -14,3 +14,4 @@ nmap <localleader>lt :r! date "+\%Y/\%m/\%d"<CR>
 vmap <localleader>lt :r! date "+\%Y/\%m/\%d"<CR>
 
 command! LedgerAutosync :!ledger-autosync --slow --max 5 --assertions >> %
+command! LedgerExport :!ledger csv -V > ~/Finances/reports/contents/data.csv && cp ~/Finances/reports/contents/data.csv ~/Finances/reports/build/data.csv

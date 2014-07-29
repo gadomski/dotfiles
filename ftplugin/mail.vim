@@ -19,9 +19,23 @@ function! MailConditionallyChangeSignature(pattern, filename)
     endif
 endfunction
 
+function! MailDeleteQuotedReply()
+    let quote_begin = search("^>") - 2
+    if quote_begin == -2
+        return
+    endif
+    let quote_end = search("^$")
+    if quote_end == 0
+        return
+    endif
+    silent exe quote_begin.','.quote_end.'d'
+endfunction
+
 call MailConditionallyChangeSignature("^From:.*@gru.org", "sig.gru")
 
 call cursor(1,1) 
-call search('^$') 
+call search('^$')
 
 set spell
+
+nnoremap <localleader>dq :call MailDeleteQuotedReply()<cr>
