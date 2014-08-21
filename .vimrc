@@ -119,9 +119,16 @@ let g:DoxygenToolkit_briefTag_pre=""
 " Syntastic
 let g:syntastic_mode_map = {'mode': 'passive'}
 let g:syntastic_javascript_checkers = ['jslint']
+nnoremap <localleader>sc :SyntasticCheck<CR>
 
 " CtrlP
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 
 " NERDTree Open
 let g:nerdtree_plugin_open_cmd = 'open'
+
+" Windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
