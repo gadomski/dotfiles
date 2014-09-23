@@ -117,7 +117,10 @@ let g:DoxygenToolkit_briefTag_pre=""
 " let g:load_doxygen_syntax=1
 
 " Syntastic
-let g:syntastic_mode_map = {'mode': 'passive'}
+let g:syntastic_mode_map = {
+            \ "mode": "passive",
+            \ "active_filetypes": ["coffeescript"]
+            \ }
 let g:syntastic_javascript_checkers = ['jslint']
 nnoremap <localleader>sc :SyntasticCheck<CR>
 
