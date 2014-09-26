@@ -103,3 +103,6 @@
 [submodule "bundle/vim-nerdtree_plugin_open"]
 	path = bundle/vim-nerdtree_plugin_open
 	url = https://github.com/aufgang001/vim-nerdtree_plugin_open.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
