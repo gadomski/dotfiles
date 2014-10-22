@@ -34,7 +34,7 @@ set incsearch
 set number
 
 " Word wrapping
-set wrap linebreak nolist nospell textwidth=0 wrapmargin=0
+set wrap linebreak nolist nospell textwidth=0 wrapmargin=0 nojoinspaces
 
 " Filetypes
 runtime! ftplugin/man.vim

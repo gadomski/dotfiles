@@ -1,4 +1,4 @@
-let s:sig_dir='/Users/gadomski/.mutt/'
+let s:sig_dir='/Users/gadomski/Mail/'
 
 function! MailChangeSignature(filename)
     call cursor(1,1)
@@ -24,14 +24,14 @@ function! MailDeleteQuotedReply()
     if quote_begin == -2
         return
     endif
-    let quote_end = search("^$")
-    if quote_end == 0
+    let quote_end = search("^$") - 1
+    if quote_end == -1
         return
     endif
     silent exe quote_begin.','.quote_end.'d'
 endfunction
 
-call MailConditionallyChangeSignature("^From:.*@gru.org", "sig.gru")
+call MailConditionallyChangeSignature("^From:.*@gru.org", "signature-gru.txt")
 
 call cursor(1,1) 
 call search('^$')
