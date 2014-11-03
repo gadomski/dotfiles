@@ -29,6 +29,9 @@ set hlsearch
 
 " Searching
 set incsearch
+set ignorecase
+set smartcase
+set hlsearch
 
 " Line numbers
 set number
