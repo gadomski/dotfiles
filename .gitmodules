@@ -109,3 +109,6 @@
 [submodule "bundle/vim-arduino-ino"]
 	path = bundle/vim-arduino-ino
 	url = https://github.com/jplaut/vim-arduino-ino.git
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = git://github.com/mustache/vim-mustache-handlebars.git
