@@ -62,6 +62,7 @@ vmap <localleader>da :RLoadPackage<CR>
 nmap <localleader>da :RLoadPackage<CR>
 nmap <LocalLeader>kr :call g:SendCmdToR('rm(list=ls(all.names=TRUE)); unlink("cache/*")')<CR>
 let vimrplugin_openpdf = 1
+let vimrplugin_assign = 0
 
 " Other useful mappings
 nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
