@@ -3,6 +3,10 @@ set nocompatible
 filetype plugin indent on
 execute pathogen#infect()
 
+" Disabled packages
+let g:pathogen_disabled = ["vim-arduino-ino"]
+
+
 " Colorscheme
 colorscheme slate
 
@@ -100,6 +104,7 @@ let g:syntastic_mode_map = {
             \ "active_filetypes": ["coffeescript"]
             \ }
 let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_cpp_checkers = ["gcc", "cppcheck"]
 nnoremap <localleader>sc :SyntasticCheck<CR>
 
 " CtrlP
@@ -114,3 +119,6 @@ noremap <C-l> <C-w>l
 " Moving
 nmap j gj
 nmap k gk
+
+" Astyle
+nnoremap <localleader>as :%!astyle --options=.astylerc<CR>
