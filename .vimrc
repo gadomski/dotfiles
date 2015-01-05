@@ -122,3 +122,6 @@ nmap k gk
 
 " Astyle
 nnoremap <localleader>as :%!astyle --options=.astylerc<CR>
+
+" Tagbar
+autocmd FileType * nested :call tagbar#autoopen(0)
