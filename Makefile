@@ -1,5 +1,6 @@
-VIM_BUNDLE_DIR = vim/bundle
 GIT_CLONE = git clone
+VIM_BUNDLE_DIR = vim/bundle
+ZSH_THEME_DIR = $(HOME)/.oh-my-zsh/custom/themes
 
 
 default:
@@ -9,14 +10,29 @@ all: zsh vim tmux
 
 
 # zsh
-zsh: zsh-conf
+zsh: oh-my-zsh zsh-conf zsh-theme
 .PHONY: zsh
+
+oh-my-zsh: $(HOME)/.oh-my-zsh
+.PHONY: oh-my-zsh
 
 zsh-conf: $(HOME)/.zshrc
 .PHONY: zsh-conf
 
+zsh-theme: $(ZSH_THEME_DIR)/gadomski.zsh-theme
+.PHONY: zsh-theme
+
+$(HOME)/.oh-my-zsh:
+	curl -L http://install.ohmyz.sh | sh
+
 $(HOME)/.zshrc:
 	ln -s $(CURDIR)/zshrc $@
+
+$(ZSH_THEME_DIR)/gadomski.zsh-theme: | $(ZSH_THEME_DIR)
+	ln -s $(CURDIR)/gadomski.zsh-theme $@	
+
+$(ZSH_THEME_DIR): oh-my-zsh
+	mkdir $(ZSH_THEME_DIR)
 
 
 # tmux
