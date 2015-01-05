@@ -3,8 +3,42 @@ GIT_CLONE = git clone
 
 
 default:
-.PHONY: default	
+.PHONY: default
 
+all: zsh vim tmux
+
+
+# zsh
+zsh: zsh-conf
+.PHONY: zsh
+
+zsh-conf: $(HOME)/.zshrc
+.PHONY: zsh-conf
+
+$(HOME)/.zshrc:
+	ln -s $(CURDIR)/zshrc $@
+
+
+# tmux
+tmux: tmux-conf
+.PHONY: tmux
+
+tmux-conf: $(HOME)/.tmux.conf
+.PHONY: tmux-conf
+
+$(HOME)/.tmux.conf:
+	ln -s $(CURDIR)/tmux.conf $@
+
+
+# vim
+vim: vimrc vim-bundles
+.PHONY: vim
+
+vimrc: $(HOME)/.vimrc
+.PHONY: vimrc
+
+$(HOME)/.vimrc:
+	ln -s $(CURDIR)/vimrc $@
 
 vim-bundles: $(VIM_BUNDLE_DIR)/vim-fugitive \
 			 $(VIM_BUNDLE_DIR)/LaTeX-Box \
