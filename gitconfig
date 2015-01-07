@@ -1,0 +1,12 @@
+[push]
+	default = simple
+[user]
+	name = Pete Gadomski
+	email = pete.gadomski@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[init]
+	templatedir = ~/.git_template
+[alias]
+	ctags = !.git/hooks/ctags

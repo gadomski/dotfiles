@@ -6,7 +6,7 @@ ZSH_THEME_DIR = $(HOME)/.oh-my-zsh/custom/themes
 default:
 .PHONY: default
 
-all: zsh vim tmux
+all: zsh vim tmux git
 
 
 # zsh
@@ -44,6 +44,20 @@ tmux-conf: $(HOME)/.tmux.conf
 
 $(HOME)/.tmux.conf:
 	ln -s $(CURDIR)/tmux.conf $@
+
+
+# git
+git: $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.git_template
+.PHONY: git
+
+$(HOME)/.gitconfig:
+	ln -s $(CURDIR)/gitconfig $@
+
+$(HOME)/.gitignore_global:
+	ln -s $(CURDIR)/gitignore_global $@
+
+$(HOME)/.git_template:
+	ln -s $(CURDIR)/git_template $@
 
 
 # vim
