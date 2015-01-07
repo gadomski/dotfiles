@@ -103,7 +103,7 @@ autocmd FileType * nested :call tagbar#autoopen(0)
 
 " Projectionist
 let g:projectionist_heuristics = {
-            \ "CMakeLists.txt": {
+            \ "CMakeLists.txt&build/build.ninja": {
             \   "*": {
             \       "make": "ninja -C build",
             \       "dispatch": "ninja -C build test"
