@@ -5,7 +5,7 @@ function prompt_char
 }
 
 PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)
 $(prompt_char) '
 
 RPROMPT='%(?.%{$fg[green]%}:-)%{$reset_color%}.%{$fg[red]%}:-(%{$reset_color%})'
