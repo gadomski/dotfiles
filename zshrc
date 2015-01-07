@@ -45,7 +45,7 @@ ZSH_THEME="gadomski"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git github brew osx tmux)
+plugins=(git brew osx tmux)
 
 # User configuration
 
