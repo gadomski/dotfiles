@@ -97,3 +97,12 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 
 " Tagbar
 autocmd FileType * nested :call tagbar#autoopen(0)
+
+" Projectionist
+let g:projectionist_heuristics = {
+            \ "CMakeLists.txt": {
+            \   "*": {
+            \       "make": "ninja -C build",
+            \       "dispatch": "ninja -C build test"
+            \   }
+            \ }}
