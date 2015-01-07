@@ -31,8 +31,8 @@ $(HOME)/.zshrc:
 $(ZSH_THEME_DIR)/gadomski.zsh-theme: | $(ZSH_THEME_DIR)
 	ln -s $(CURDIR)/gadomski.zsh-theme $@	
 
-$(ZSH_THEME_DIR): oh-my-zsh
-	mkdir $(ZSH_THEME_DIR)
+$(ZSH_THEME_DIR):
+	mkdir $@
 
 
 # tmux
@@ -61,14 +61,20 @@ $(HOME)/.git_template:
 
 
 # vim
-vim: vimrc vim-bundles
+vim: vimrc vim-dir vim-bundles
 .PHONY: vim
 
 vimrc: $(HOME)/.vimrc
 .PHONY: vimrc
 
+vim-dir: $(HOME)/.vim
+.PHONY: vim-dir
+
 $(HOME)/.vimrc:
 	ln -s $(CURDIR)/vimrc $@
+
+$(HOME)/.vim:
+	ln -s $(CURDIR)/vim $@
 
 vim-bundles: $(VIM_BUNDLE_DIR)/vim-fugitive \
 			 $(VIM_BUNDLE_DIR)/LaTeX-Box \
@@ -141,4 +147,4 @@ $(VIM_BUNDLE_DIR)/a.vim: | $(VIM_BUNDLE_DIR)
 	$(GIT_CLONE) https://github.com/vim-scripts/a.vim.git $@
 
 $(VIM_BUNDLE_DIR):
-	mkdir $(VIM_BUNDLE_DIR)
+	mkdir $@
