@@ -55,6 +55,9 @@ nmap k gk
 nnoremap <localleader>as :%!astyle --options=.astylerc<CR>
 nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
 
+" Useful commands
+command! Ccmake :!cd build && ccmake ..
+
 
 "
 " Plugins and filetypes
