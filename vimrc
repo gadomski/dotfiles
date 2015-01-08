@@ -97,7 +97,7 @@ let g:syntastic_cpp_checkers = ["gcc", "cppcheck"]
 nnoremap <localleader>sc :SyntasticCheck<CR>
 
 " CtrlP
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v vendor/']
 
 " Tagbar
 autocmd FileType * nested :call tagbar#autoopen(0)
