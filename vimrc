@@ -9,7 +9,8 @@ execute pathogen#infect()
 "
 
 " Colors
-colorscheme slate
+set background=dark
+colorscheme solarized
 
 " Leaders
 let mapleader=","
