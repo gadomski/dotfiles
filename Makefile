@@ -93,7 +93,8 @@ vim-bundles: $(VIM_BUNDLE_DIR)/vim-fugitive \
 			 $(VIM_BUNDLE_DIR)/syntastic \
 			 $(VIM_BUNDLE_DIR)/tagbar \
 			 $(VIM_BUNDLE_DIR)/vim-projectionist \
-			 $(VIM_BUNDLE_DIR)/vim-colors-solarized
+			 $(VIM_BUNDLE_DIR)/vim-colors-solarized \
+			 $(VIM_BUNDLE_DIR)/grunt.vim
 .PHONY: vim-bundles
 
 $(VIM_BUNDLE_DIR)/vim-fugitive: | $(VIM_BUNDLE_DIR)
@@ -147,8 +148,11 @@ $(VIM_BUNDLE_DIR)/tagbar: | $(VIM_BUNDLE_DIR)
 $(VIM_BUNDLE_DIR)/vim-projectionist: | $(VIM_BUNDLE_DIR)
 	$(GIT_CLONE) https://github.com/tpope/vim-projectionist.git $@
 
-$(VIM_BUNDLE_DIR)/vim-colors-solarized:
+$(VIM_BUNDLE_DIR)/vim-colors-solarized: | $(VIM_BUNDLE_DIR)
 	$(GIT_CLONE) https://github.com/altercation/vim-colors-solarized.git $@
+
+$(VIM_BUNDLE_DIR)/grunt.vim: | $(VIM_BUNDLE_DIR)
+	$(GIT_CLONE) https://github.com/mklabs/grunt.vim.git $@
 
 $(VIM_BUNDLE_DIR):
 	mkdir $@

@@ -48,6 +48,10 @@ noremap <C-k> <C-w>k
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 
+" GUI options
+set guioptions-=rL
+set guioptions+=m
+
 " Moving
 nmap j gj
 nmap k gk
