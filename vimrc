@@ -110,7 +110,13 @@ autocmd FileType * nested :call tagbar#autoopen(0)
 let g:projectionist_heuristics = {
             \ "CMakeLists.txt&build/build.ninja": {
             \   "*": {
-            \       "make": "ninja -C build",
-            \       "dispatch": "ninja -C build test"
+            \       "make": "ninja-default-in-build-dir",
+            \       "dispatch": "ninja-test-in-build-dir"
             \   }
             \ }}
+
+" Dispatch
+let g:dispatch_compilers = {
+            \ "ninja-default-in-build-dir": "clang",
+            \ "ninja-test-in-build-dir": "gtest"
+            \ }
