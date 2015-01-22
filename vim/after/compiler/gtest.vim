@@ -7,4 +7,4 @@ if exists("gtest")
 endif
 let current_compiler = "gtest"
 
-setlocal errorformat=%f:%l:%c:\ %t%s:\ %m,../%f:%l:\ Failure
+setlocal errorformat=%f:%l:%c:\ %t%s:\ %m,../%f:%l:\ Failure,%EFAILED:%.%#,%Z%m
