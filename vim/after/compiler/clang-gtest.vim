@@ -7,4 +7,4 @@ if exists("clang-gtest")
 endif
 let current_compiler = "clang-gtest"
 
-setlocal errorformat=%Dninja:\ Entering\ directory\ `%f',%f:%l:%c:\ %m,Undefined\ symbols%m,%f:%l:\ Failure,Errors\ while\ running\ CTest:,%ECMake\ Error\ at\ %f:%l\ (message):,%Z\ \ %m
+setlocal errorformat=%Dninja:\ Entering\ directory\ `%f',%f:%l:%c:\ %m,Undefined\ symbols%m,%f:%l:\ Failure,Errors\ while\ running\ CTest:,%ECMake\ Error\ at\ %f:%l\ (message):,%Z\ \ %m,CMake\ Error:\ %m
