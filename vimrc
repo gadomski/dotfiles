@@ -118,6 +118,6 @@ let g:projectionist_heuristics = {
 
 " Dispatch
 let g:dispatch_compilers = {
-            \ "ninja-default-in-build-dir": "clang",
-            \ "ninja-test-in-build-dir": "gtest"
+            \ "ninja-default-in-build-dir": "clang-gtest",
+            \ "ninja-test-in-build-dir": "clang-gtest"
             \ }
