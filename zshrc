@@ -74,6 +74,9 @@ bindkey '^N' history-search-forward
 # PDAL
 export PDAL_VAGRANT_SSH_FORWARD_AGENT=true
 
+# Android Studio
+export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
