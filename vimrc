@@ -60,6 +60,11 @@ nmap k gk
 " Other useful mappings
 nnoremap <localleader>as :%!astyle --options=.astylerc<CR>
 nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
+nnoremap <localleader>w :w<CR>
+nnoremap <localleader>mm :Make<CR>
+nnoremap <localleader>md :Dispatch<CR>
+nnoremap <localleader>co :Copen<CR>
+nnoremap <localleader>cl :ccl<CR>
 
 " Useful commands
 command! Ccmake :!cd build && ccmake ..
@@ -103,9 +108,6 @@ nnoremap <localleader>sc :SyntasticCheck<CR>
 
 " CtrlP
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v vendor/']
-
-" Tagbar
-autocmd FileType * nested :call tagbar#autoopen(0)
 
 " Projectionist
 let g:projectionist_heuristics = {
