@@ -73,6 +73,7 @@ bindkey '^N' history-search-forward
 
 # PDAL
 export PDAL_VAGRANT_SSH_FORWARD_AGENT=true
+export PDAL_VAGRANT_DISABLE_NFS=true
 
 # Android Studio
 export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
