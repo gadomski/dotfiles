@@ -25,6 +25,7 @@ zsh-theme: $(ZSH_THEME_DIR)
 .PHONY: zsh-theme
 
 zsh-aliases: $(ZSH_ALIASES)
+.PHONY: zsh-aliases
 
 $(HOME)/.oh-my-zsh:
 	curl -L http://install.ohmyz.sh | sh
