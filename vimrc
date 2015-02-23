@@ -34,6 +34,7 @@ set smartcase
 set hlsearch
 
 " Line numbers
+set relativenumber
 set number
 
 " Word wrapping
@@ -61,10 +62,11 @@ nmap k gk
 nnoremap <localleader>as :%!astyle --options=.astylerc<CR>
 nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
 nnoremap <localleader>w :w<CR>
-nnoremap <localleader>mm :Make<CR>
+nnoremap <localleader>mm :w<CR>:Make<CR>
 nnoremap <localleader>md :Dispatch<CR>
 nnoremap <localleader>co :Copen<CR>
 nnoremap <localleader>cl :ccl<CR>
+nnoremap <localleader>gst :Gstatus<CR>
 
 " Useful commands
 command! Ccmake :!cd build && ccmake ..
