@@ -62,11 +62,12 @@ nmap k gk
 nnoremap <localleader>as :%!astyle --options=.astylerc<CR>
 nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
 nnoremap <localleader>w :w<CR>
-nnoremap <localleader>mm :w<CR>:Make<CR>
+nnoremap <localleader>mm :Make<CR>
 nnoremap <localleader>md :Dispatch<CR>
 nnoremap <localleader>co :Copen<CR>
 nnoremap <localleader>cl :ccl<CR>
-nnoremap <localleader>gst :Gstatus<CR>
+nnoremap <localleader>gs :Gstatus<CR>
+nnoremap <localleader>cm :!cd build && cmake ..<CR>
 
 " Useful commands
 command! Ccmake :!cd build && ccmake ..
@@ -105,7 +106,16 @@ let g:syntastic_mode_map = {
             \ "active_filetypes": ["coffeescript"]
             \ }
 let g:syntastic_javascript_checkers = ['jslint']
-let g:syntastic_cpp_checkers = ["gcc", "cppcheck"]
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_checkers = ['clang_check']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 2
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_cpp_clang_check_post_args = '-p build/compile_commands.json'
 nnoremap <localleader>sc :SyntasticCheck<CR>
 
 " CtrlP
