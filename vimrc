@@ -65,6 +65,7 @@ nnoremap <localleader>mm :Make<CR>
 nnoremap <localleader>md :Dispatch<CR>
 nnoremap <localleader>co :Copen<CR>
 nnoremap <localleader>cl :ccl<CR>
+nnoremap <localleader>gst :Gstatus<CR>
 
 " Useful commands
 command! Ccmake :!cd build && ccmake ..
