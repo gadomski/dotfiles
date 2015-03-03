@@ -4,6 +4,33 @@ VIM_BUNDLE_DIR = vim/bundle
 OH_MY_ZSH_CUSTOM = $(HOME)/.oh-my-zsh/custom
 ZSH_THEME_DIR = $(OH_MY_ZSH_CUSTOM)/themes
 ZSH_ALIASES = $(OH_MY_ZSH_CUSTOM)/aliases.zsh
+VIM_BUNDLE_URLS = \
+	https://github.com/tpope/vim-fugitive.git \
+	https://github.com/LaTeX-Box-Team/LaTeX-Box.git \
+	https://github.com/scrooloose/nerdtree.git \
+	https://github.com/tpope/vim-dispatch.git \
+	https://github.com/tpope/vim-markdown.git \
+	https://github.com/tpope/vim-repeat.git \
+	https://github.com/tpope/vim-sensible.git \
+	https://github.com/tpope/vim-surround.git \
+	https://github.com/tpope/vim-unimpaired.git \
+	https://github.com/ivalkeen/nerdtree-execute.git \
+	https://github.com/bling/vim-airline.git \
+	https://github.com/ledger/vim-ledger.git \
+	https://github.com/moll/vim-bbye.git \
+	https://github.com/kien/ctrlp.vim.git \
+	https://github.com/scrooloose/syntastic.git \
+	https://github.com/majutsushi/tagbar.git \
+	https://github.com/tpope/vim-projectionist.git \
+	https://github.com/altercation/vim-colors-solarized.git \
+	https://github.com/mklabs/grunt.vim.git \
+	https://github.com/int3/vim-extradite.git \
+	https://github.com/idanarye/vim-merginal.git \
+	https://github.com/octol/vim-cpp-enhanced-highlight.git \
+	https://github.com/kana/vim-operator-user.git \
+	https://github.com/rhysd/vim-clang-format.git
+vim_bundle = $(addprefix $(VIM_BUNDLE_DIR)/,$(basename $(notdir $(1))))
+VIM_BUNDLES = $(call vim_bundle,$(VIM_BUNDLE_URLS))
 
 
 # Phonies
@@ -19,30 +46,7 @@ git: $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.git_template
 vim: vimrc vim-dir vim-bundles
 vimrc: $(HOME)/.vimrc
 vim-dir: $(HOME)/.vim
-vim-bundles: $(VIM_BUNDLE_DIR)/vim-fugitive \
-			 $(VIM_BUNDLE_DIR)/LaTeX-Box \
-			 $(VIM_BUNDLE_DIR)/nerdtree \
-			 $(VIM_BUNDLE_DIR)/vim-dispatch \
-			 $(VIM_BUNDLE_DIR)/vim-markdown \
-			 $(VIM_BUNDLE_DIR)/vim-repeat \
-			 $(VIM_BUNDLE_DIR)/vim-sensible \
-			 $(VIM_BUNDLE_DIR)/vim-surround \
-			 $(VIM_BUNDLE_DIR)/vim-unimparied \
-			 $(VIM_BUNDLE_DIR)/nerdtree-execute \
-			 $(VIM_BUNDLE_DIR)/vim-airline \
-			 $(VIM_BUNDLE_DIR)/vim-ledger \
-			 $(VIM_BUNDLE_DIR)/bbye \
-			 $(VIM_BUNDLE_DIR)/ctrlp.vim \
-			 $(VIM_BUNDLE_DIR)/syntastic \
-			 $(VIM_BUNDLE_DIR)/tagbar \
-			 $(VIM_BUNDLE_DIR)/vim-projectionist \
-			 $(VIM_BUNDLE_DIR)/vim-colors-solarized \
-			 $(VIM_BUNDLE_DIR)/grunt.vim \
-			 $(VIM_BUNDLE_DIR)/vim-extradite \
-			 $(VIM_BUNDLE_DIR)/vim-merginal \
-			 $(VIM_BUNDLE_DIR)/vim-cpp-enhanced-highlight \
-			 $(VIM_BUNDLE_DIR)/vim-operator-user \
-			 $(VIM_BUNDLE_DIR)/vim-clang-format
+vim-bundles: $(VIM_BUNDLES)
 all: zsh vim tmux git
 
 .PHONY: default \
@@ -61,7 +65,7 @@ $(HOME)/.zshrc:
 	ln -s $(CURDIR)/zshrc $@
 
 $(ZSH_THEME_DIR):
-	ln -s $(CURDIR)/zsh-theme $@	
+	ln -s $(CURDIR)/zsh-theme $@
 
 $(ZSH_ALIASES):
 	ln -s $(CURDIR)/zsh-aliases.zsh $@
@@ -90,77 +94,14 @@ $(HOME)/.vimrc:
 $(HOME)/.vim:
 	ln -s $(CURDIR)/vim $@
 
-$(VIM_BUNDLE_DIR)/vim-fugitive: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/tpope/vim-fugitive.git $@
 
-$(VIM_BUNDLE_DIR)/LaTeX-Box: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/LaTeX-Box-Team/LaTeX-Box.git $@
+define VIM_BUNDLE_template
+$(call vim_bundle,$(1)): | $(VIM_BUNDLE_DIR)
+	$(GIT_CLONE) $(1) $$@
+endef
 
-$(VIM_BUNDLE_DIR)/nerdtree: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/scrooloose/nerdtree.git $@
+$(foreach url,$(VIM_BUNDLE_URLS),$(eval $(call VIM_BUNDLE_template,$(url))))
 
-$(VIM_BUNDLE_DIR)/vim-dispatch: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/tpope/vim-dispatch.git $@
-
-$(VIM_BUNDLE_DIR)/vim-markdown: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/tpope/vim-markdown.git $@
-
-$(VIM_BUNDLE_DIR)/vim-repeat: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/tpope/vim-repeat.git $@
-
-$(VIM_BUNDLE_DIR)/vim-sensible: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/tpope/vim-sensible.git $@
-
-$(VIM_BUNDLE_DIR)/vim-surround: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/tpope/vim-surround.git $@
-
-$(VIM_BUNDLE_DIR)/vim-unimparied: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/tpope/vim-unimpaired.git $@
-
-$(VIM_BUNDLE_DIR)/nerdtree-execute: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/ivalkeen/nerdtree-execute.git $@
-
-$(VIM_BUNDLE_DIR)/vim-airline: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/bling/vim-airline.git $@
-
-$(VIM_BUNDLE_DIR)/vim-ledger: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/ledger/vim-ledger.git $@
-
-$(VIM_BUNDLE_DIR)/bbye: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/moll/vim-bbye.git $@
-
-$(VIM_BUNDLE_DIR)/ctrlp.vim: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/kien/ctrlp.vim.git $@
-
-$(VIM_BUNDLE_DIR)/syntastic: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/scrooloose/syntastic.git $@
-
-$(VIM_BUNDLE_DIR)/tagbar: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/majutsushi/tagbar.git $@
-
-$(VIM_BUNDLE_DIR)/vim-projectionist: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/tpope/vim-projectionist.git $@
-
-$(VIM_BUNDLE_DIR)/vim-colors-solarized: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/altercation/vim-colors-solarized.git $@
-
-$(VIM_BUNDLE_DIR)/grunt.vim: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/mklabs/grunt.vim.git $@
-
-$(VIM_BUNDLE_DIR)/vim-extradite: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/int3/vim-extradite.git $@
-
-$(VIM_BUNDLE_DIR)/vim-merginal: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/idanarye/vim-merginal.git $@
-
-$(VIM_BUNDLE_DIR)/vim-cpp-enhanced-highlight: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/octol/vim-cpp-enhanced-highlight.git $@
-
-$(VIM_BUNDLE_DIR)/vim-operator-user: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/kana/vim-operator-user.git $@
-
-$(VIM_BUNDLE_DIR)/vim-clang-format: | $(VIM_BUNDLE_DIR)
-	$(GIT_CLONE) https://github.com/rhysd/vim-clang-format.git $@
 
 $(VIM_BUNDLE_DIR):
 	mkdir $@
