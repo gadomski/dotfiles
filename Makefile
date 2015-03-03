@@ -1,3 +1,4 @@
+# Config
 GIT_CLONE = git clone
 VIM_BUNDLE_DIR = vim/bundle
 OH_MY_ZSH_CUSTOM = $(HOME)/.oh-my-zsh/custom
@@ -5,83 +6,19 @@ ZSH_THEME_DIR = $(OH_MY_ZSH_CUSTOM)/themes
 ZSH_ALIASES = $(OH_MY_ZSH_CUSTOM)/aliases.zsh
 
 
+# Phonies
 default:
-.PHONY: default
-
-all: zsh vim tmux git
-
-
-# zsh
 zsh: oh-my-zsh zsh-conf zsh-theme zsh-aliases
-.PHONY: zsh
-
 oh-my-zsh: $(HOME)/.oh-my-zsh
-.PHONY: oh-my-zsh
-
 zsh-conf: $(HOME)/.zshrc
-.PHONY: zsh-conf
-
 zsh-theme: $(ZSH_THEME_DIR)
-.PHONY: zsh-theme
-
 zsh-aliases: $(ZSH_ALIASES)
-.PHONY: zsh-aliases
-
-$(HOME)/.oh-my-zsh:
-	curl -L http://install.ohmyz.sh | sh
-	rm ~/.zshrc
-
-$(HOME)/.zshrc:
-	ln -s $(CURDIR)/zshrc $@
-
-$(ZSH_THEME_DIR):
-	ln -s $(CURDIR)/zsh-theme $@	
-
-$(ZSH_ALIASES):
-	ln -s $(CURDIR)/zsh-aliases.zsh $@
-
-
-# tmux
 tmux: tmux-conf
-.PHONY: tmux
-
 tmux-conf: $(HOME)/.tmux.conf
-.PHONY: tmux-conf
-
-$(HOME)/.tmux.conf:
-	ln -s $(CURDIR)/tmux.conf $@
-
-
-# git
 git: $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.git_template
-.PHONY: git
-
-$(HOME)/.gitconfig:
-	ln -s $(CURDIR)/gitconfig $@
-
-$(HOME)/.gitignore_global:
-	ln -s $(CURDIR)/gitignore_global $@
-
-$(HOME)/.git_template:
-	ln -s $(CURDIR)/git_template $@
-
-
-# vim
 vim: vimrc vim-dir vim-bundles
-.PHONY: vim
-
 vimrc: $(HOME)/.vimrc
-.PHONY: vimrc
-
 vim-dir: $(HOME)/.vim
-.PHONY: vim-dir
-
-$(HOME)/.vimrc:
-	ln -s $(CURDIR)/vimrc $@
-
-$(HOME)/.vim:
-	ln -s $(CURDIR)/vim $@
-
 vim-bundles: $(VIM_BUNDLE_DIR)/vim-fugitive \
 			 $(VIM_BUNDLE_DIR)/LaTeX-Box \
 			 $(VIM_BUNDLE_DIR)/nerdtree \
@@ -106,7 +43,52 @@ vim-bundles: $(VIM_BUNDLE_DIR)/vim-fugitive \
 			 $(VIM_BUNDLE_DIR)/vim-cpp-enhanced-highlight \
 			 $(VIM_BUNDLE_DIR)/vim-operator-user \
 			 $(VIM_BUNDLE_DIR)/vim-clang-format
-.PHONY: vim-bundles
+all: zsh vim tmux git
+
+.PHONY: default \
+	zsh oh-my-zsh zsh-conf zsh-theme zsh-aliases \
+	tmux tmux-conf \
+	git \
+	vim vimrc vim-dir vim-bundles
+
+
+# zsh
+$(HOME)/.oh-my-zsh:
+	curl -L http://install.ohmyz.sh | sh
+	rm ~/.zshrc
+
+$(HOME)/.zshrc:
+	ln -s $(CURDIR)/zshrc $@
+
+$(ZSH_THEME_DIR):
+	ln -s $(CURDIR)/zsh-theme $@	
+
+$(ZSH_ALIASES):
+	ln -s $(CURDIR)/zsh-aliases.zsh $@
+
+
+# tmux
+$(HOME)/.tmux.conf:
+	ln -s $(CURDIR)/tmux.conf $@
+
+
+# git
+$(HOME)/.gitconfig:
+	ln -s $(CURDIR)/gitconfig $@
+
+$(HOME)/.gitignore_global:
+	ln -s $(CURDIR)/gitignore_global $@
+
+$(HOME)/.git_template:
+	ln -s $(CURDIR)/git_template $@
+
+
+# vim
+$(HOME)/.vimrc:
+	ln -s $(CURDIR)/vimrc $@
+
+$(HOME)/.vim:
+	ln -s $(CURDIR)/vim $@
 
 $(VIM_BUNDLE_DIR)/vim-fugitive: | $(VIM_BUNDLE_DIR)
 	$(GIT_CLONE) https://github.com/tpope/vim-fugitive.git $@
