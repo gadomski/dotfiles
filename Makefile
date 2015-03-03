@@ -103,7 +103,9 @@ vim-bundles: $(VIM_BUNDLE_DIR)/vim-fugitive \
 			 $(VIM_BUNDLE_DIR)/grunt.vim \
 			 $(VIM_BUNDLE_DIR)/vim-extradite \
 			 $(VIM_BUNDLE_DIR)/vim-merginal \
-			 $(VIM_BUNDLE_DIR)/vim-cpp-enhanced-highlight
+			 $(VIM_BUNDLE_DIR)/vim-cpp-enhanced-highlight \
+			 $(VIM_BUNDLE_DIR)/vim-operator-user \
+			 $(VIM_BUNDLE_DIR)/vim-clang-format
 .PHONY: vim-bundles
 
 $(VIM_BUNDLE_DIR)/vim-fugitive: | $(VIM_BUNDLE_DIR)
@@ -171,6 +173,12 @@ $(VIM_BUNDLE_DIR)/vim-merginal: | $(VIM_BUNDLE_DIR)
 
 $(VIM_BUNDLE_DIR)/vim-cpp-enhanced-highlight: | $(VIM_BUNDLE_DIR)
 	$(GIT_CLONE) https://github.com/octol/vim-cpp-enhanced-highlight.git $@
+
+$(VIM_BUNDLE_DIR)/vim-operator-user: | $(VIM_BUNDLE_DIR)
+	$(GIT_CLONE) https://github.com/kana/vim-operator-user.git $@
+
+$(VIM_BUNDLE_DIR)/vim-clang-format: | $(VIM_BUNDLE_DIR)
+	$(GIT_CLONE) https://github.com/rhysd/vim-clang-format.git $@
 
 $(VIM_BUNDLE_DIR):
 	mkdir $@

@@ -59,7 +59,6 @@ nmap j gj
 nmap k gk
 
 " Other useful mappings
-nnoremap <localleader>as :%!astyle --options=.astylerc<CR>
 nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
 nnoremap <localleader>w :w<CR>
 nnoremap <localleader>mm :Make<CR>
@@ -68,6 +67,7 @@ nnoremap <localleader>co :Copen<CR>
 nnoremap <localleader>cl :ccl<CR>
 nnoremap <localleader>gs :Gstatus<CR>
 nnoremap <localleader>cm :!cd build && cmake ..<CR>
+nnoremap <localleader>cf :ClangFormat<CR>
 
 " Useful commands
 command! Ccmake :!cd build && ccmake ..
