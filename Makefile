@@ -102,7 +102,8 @@ vim-bundles: $(VIM_BUNDLE_DIR)/vim-fugitive \
 			 $(VIM_BUNDLE_DIR)/vim-colors-solarized \
 			 $(VIM_BUNDLE_DIR)/grunt.vim \
 			 $(VIM_BUNDLE_DIR)/vim-extradite \
-			 $(VIM_BUNDLE_DIR)/vim-merginal
+			 $(VIM_BUNDLE_DIR)/vim-merginal \
+			 $(VIM_BUNDLE_DIR)/vim-cpp-enhanced-highlight
 .PHONY: vim-bundles
 
 $(VIM_BUNDLE_DIR)/vim-fugitive: | $(VIM_BUNDLE_DIR)
@@ -167,6 +168,9 @@ $(VIM_BUNDLE_DIR)/vim-extradite: | $(VIM_BUNDLE_DIR)
 
 $(VIM_BUNDLE_DIR)/vim-merginal: | $(VIM_BUNDLE_DIR)
 	$(GIT_CLONE) https://github.com/idanarye/vim-merginal.git $@
+
+$(VIM_BUNDLE_DIR)/vim-cpp-enhanced-highlight: | $(VIM_BUNDLE_DIR)
+	$(GIT_CLONE) https://github.com/octol/vim-cpp-enhanced-highlight.git $@
 
 $(VIM_BUNDLE_DIR):
 	mkdir $@
