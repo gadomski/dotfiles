@@ -54,10 +54,6 @@ noremap <C-c> <C-w>c
 set guioptions-=rL
 set guioptions+=m
 
-" Moving
-nmap j gj
-nmap k gk
-
 " Other useful mappings
 nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
 nnoremap <localleader>w :w<CR>
@@ -65,12 +61,12 @@ nnoremap <localleader>mm :Make<CR>
 nnoremap <localleader>md :Dispatch<CR>
 nnoremap <localleader>co :Copen<CR>
 nnoremap <localleader>cl :ccl<CR>
+nnoremap <localleader>lc :lcl<CR>
 nnoremap <localleader>gs :Gstatus<CR>
 nnoremap <localleader>cm :!cd build && cmake ..<CR>
 nnoremap <localleader>cf :ClangFormat<CR>
-
-" Useful commands
-command! Ccmake :!cd build && ccmake ..
+nnoremap <localleader>bd :Bdelete<CR>
+nnoremap <localleader>sc :SyntasticCheck<CR>
 
 
 "
@@ -93,9 +89,6 @@ let g:airline#extensions#tabline#enabled = 1
 " NERDtree
 let NERDTreeChDirMode = 2
 
-" BBye
-nnoremap <localleader>bd :Bdelete<CR>
-
 " Extradite
 let g:extradite_resize = 0
 let g:extradite_showhash = 1
@@ -116,7 +109,6 @@ let g:syntastic_auto_jump = 2
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 1
 let g:syntastic_cpp_clang_check_post_args = '-p build/compile_commands.json'
-nnoremap <localleader>sc :SyntasticCheck<CR>
 
 " CtrlP
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v vendor/']
