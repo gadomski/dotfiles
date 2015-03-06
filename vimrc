@@ -65,6 +65,7 @@ nnoremap <localleader>lc :lcl<CR>
 nnoremap <localleader>gs :Gstatus<CR>
 nnoremap <localleader>cm :!cd build && cmake ..<CR>
 nnoremap <localleader>cf :ClangFormat<CR>
+vnoremap <localleader>cf :ClangFormat<CR>
 nnoremap <localleader>bd :Bdelete<CR>
 nnoremap <localleader>sc :SyntasticCheck<CR>
 
@@ -109,6 +110,10 @@ let g:syntastic_auto_jump = 2
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 1
 let g:syntastic_cpp_clang_check_post_args = '-p build/compile_commands.json'
+
+" Clang format
+let g:clang_format#detect_style_file = 1
+
 
 " CtrlP
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files | grep -v vendor/']
