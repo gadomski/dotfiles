@@ -28,7 +28,9 @@ VIM_BUNDLE_URLS = \
 	https://github.com/idanarye/vim-merginal.git \
 	https://github.com/octol/vim-cpp-enhanced-highlight.git \
 	https://github.com/kana/vim-operator-user.git \
-	https://github.com/rhysd/vim-clang-format.git
+	https://github.com/rhysd/vim-clang-format.git \
+	https://github.com/vim-pandoc/vim-pandoc.git \
+	https://github.com/vim-pandoc/vim-pandoc-syntax.git
 vim_bundle = $(addprefix $(VIM_BUNDLE_DIR)/,$(basename $(notdir $(1))))
 VIM_BUNDLES = $(call vim_bundle,$(VIM_BUNDLE_URLS))
 
