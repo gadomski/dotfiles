@@ -64,7 +64,7 @@ nnoremap <localleader>cl :ccl<CR>
 nnoremap <localleader>lc :lcl<CR>
 nnoremap <localleader>gs :Gstatus<CR>
 nnoremap <localleader>cm :!cd build && cmake ..<CR>
-nnoremap <localleader>cf :ClangFormat<CR>
+nnoremap <localleader>cf :ClangFormat<CR>zz
 vnoremap <localleader>cf :ClangFormat<CR>
 nnoremap <localleader>bd :Bdelete<CR>
 nnoremap <localleader>sc :SyntasticCheck<CR>
@@ -132,3 +132,7 @@ let g:dispatch_compilers = {
             \ "ninja-default-in-build-dir": "clang-gtest",
             \ "ninja-test-in-build-dir": "clang-gtest"
             \ }
+
+" vim-pandoc
+let g:pandoc#completion#bib#mode = 'citeproc'
+let g:pandoc#biblio#use_bibtool = 1
