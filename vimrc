@@ -64,7 +64,7 @@ nnoremap <localleader>cl :ccl<CR>
 nnoremap <localleader>lc :lcl<CR>
 nnoremap <localleader>gs :Gstatus<CR>
 nnoremap <localleader>cm :!cd build && cmake ..<CR>
-nnoremap <localleader>cf :ClangFormat<CR>zz
+nnoremap <localleader>cf :ClangFormat<CR>:w<CR>zz
 vnoremap <localleader>cf :ClangFormat<CR>
 nnoremap <localleader>bd :Bdelete<CR>
 nnoremap <localleader>sc :SyntasticCheck<CR>
