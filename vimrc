@@ -77,6 +77,11 @@ nnoremap <localleader>sc :SyntasticCheck<CR>
 " Filetypes
 runtime! ftplugin/man.vim
 
+" Octave
+augroup filetypedetect
+  au! BufRead,BufNewFile *.m,*.oct set filetype=octave
+augroup END
+
 " Latex-box preferred
 let g:tex_flavor = "latex"
 let g:LatexBox_latexmk_async = 1
