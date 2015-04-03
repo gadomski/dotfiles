@@ -53,7 +53,7 @@ export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/s
 export C_INCLUDE_PATH="$HOME/Repos/openmp/build:$C_INCLUDE_PATH"
 export CPLUS_INCLUDE_PATH="$HOME/Repos/openmp/build:$CPLUS_INCLUDE_PATH"
 export LIBRARY_PATH="$HOME/local/lib:$HOME/Repos/openmp/build:$LIBRARY_PATH"
-export DYLD_LIBRARY_PATH="$HOME/local/lib:$HOME/Repos/openmp/build:$DYLD_LIBRARY_PATH"
+export DYLD_FALLBACK_LIBRARY_PATH="$HOME/local/lib:$HOME/Repos/openmp/build:$DYLD_LIBRARY_PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
