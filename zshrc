@@ -50,10 +50,6 @@ plugins=(git brew osx tmux)
 # User configuration
 
 export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
-export C_INCLUDE_PATH="$HOME/Repos/openmp/build:$C_INCLUDE_PATH"
-export CPLUS_INCLUDE_PATH="$HOME/Repos/openmp/build:$CPLUS_INCLUDE_PATH"
-export LIBRARY_PATH="$HOME/local/lib:$HOME/Repos/openmp/build:$LIBRARY_PATH"
-export DYLD_FALLBACK_LIBRARY_PATH="$HOME/local/lib:$HOME/Repos/openmp/build:$DYLD_LIBRARY_PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -78,7 +74,6 @@ bindkey '^N' history-search-forward
 # PDAL
 export PDAL_VAGRANT_SSH_FORWARD_AGENT=true
 export PDAL_VAGRANT_DISABLE_NFS=true
-export PDAL_DRIVER_PATH="/Users/gadomski/Repos/PDAL/build/lib"
 
 # Android Studio
 export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk

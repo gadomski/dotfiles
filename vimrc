@@ -38,7 +38,7 @@ set relativenumber
 set number
 
 " Word wrapping
-set wrap linebreak nolist nospell textwidth=0 wrapmargin=0 nojoinspaces
+set nowrap nolist nospell textwidth=0 wrapmargin=0 nojoinspaces
 
 " Titlestring
 auto BufEnter * let &titlestring = "[". getcwd() . "] :: " . expand("%:p")
@@ -68,6 +68,7 @@ nnoremap <localleader>cf :ClangFormat<CR>:w<CR>zz
 vnoremap <localleader>cf :ClangFormat<CR>
 nnoremap <localleader>bd :Bdelete<CR>
 nnoremap <localleader>sc :SyntasticCheck<CR>
+nnoremap <localleader>sr :SyntasticReset<CR>
 
 
 "
@@ -94,6 +95,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " NERDtree
 let NERDTreeChDirMode = 2
+let NERDTreeIgnore = ['\~$', '\.pyc$']
 
 " Extradite
 let g:extradite_resize = 0
@@ -104,7 +106,7 @@ let g:syntastic_mode_map = {
             \ "mode": "passive",
             \ "active_filetypes": ["coffeescript"]
             \ }
-let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_javascript_checkers = ['jslint', 'jshint']
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_checkers = ['clang_check']
 let g:syntastic_always_populate_loc_list = 1
@@ -141,3 +143,6 @@ let g:dispatch_compilers = {
 " vim-pandoc
 let g:pandoc#completion#bib#mode = 'citeproc'
 let g:pandoc#biblio#use_bibtool = 1
+
+" pymode
+let g:pymode_rope_complete_on_dot = 0
