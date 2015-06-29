@@ -86,3 +86,8 @@ export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# added by travis gem
+[ -f /Users/gadomski/.travis/travis.sh ] && source /Users/gadomski/.travis/travis.sh
+
+source ~/.zsh-tokens

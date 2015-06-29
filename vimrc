@@ -70,6 +70,11 @@ nnoremap <localleader>bd :Bdelete<CR>
 nnoremap <localleader>sc :SyntasticCheck<CR>
 nnoremap <localleader>sr :SyntasticReset<CR>
 
+" Rust
+let g:cargo_command = "Dispatch cargo {cmd}"
+autocmd FileType rust nnoremap <localleader>mm :CargoBuild<CR>
+autocmd FileType rust nnoremap <localleader>md :CargoTest<CR>
+
 
 "
 " Plugins and filetypes
@@ -143,6 +148,7 @@ let g:dispatch_compilers = {
 " vim-pandoc
 let g:pandoc#completion#bib#mode = 'citeproc'
 let g:pandoc#biblio#use_bibtool = 1
+let g:pandoc#modules#disabled = ["chdir"]
 
 " pymode
 let g:pymode_rope_complete_on_dot = 0

@@ -33,7 +33,8 @@ VIM_BUNDLE_URLS = \
 	https://github.com/vim-pandoc/vim-pandoc-syntax.git \
 	https://github.com/klen/python-mode \
 	https://github.com/lambdalisue/nose.vim.git \
-	https://github.com/rust-lang/rust.vim.git
+	https://github.com/rust-lang/rust.vim.git \
+	https://github.com/cespare/vim-toml.git
 vim_bundle = $(addprefix $(VIM_BUNDLE_DIR)/,$(basename $(notdir $(1))))
 VIM_BUNDLES = $(call vim_bundle,$(VIM_BUNDLE_URLS))
 
