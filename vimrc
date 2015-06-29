@@ -70,12 +70,6 @@ nnoremap <localleader>bd :Bdelete<CR>
 nnoremap <localleader>sc :SyntasticCheck<CR>
 nnoremap <localleader>sr :SyntasticReset<CR>
 
-" Rust
-let g:cargo_command = "Dispatch cargo {cmd}"
-autocmd FileType rust nnoremap <localleader>mm :CargoBuild<CR>
-autocmd FileType rust nnoremap <localleader>md :CargoTest<CR>
-
-
 "
 " Plugins and filetypes
 "
