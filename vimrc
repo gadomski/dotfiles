@@ -98,7 +98,6 @@ let g:extradite_showhash = 1
 " Syntastic
 let g:syntastic_mode_map = {
             \ "mode": "passive",
-            \ "active_filetypes": ["coffeescript"]
             \ }
 let g:syntastic_javascript_checkers = ['jslint', 'jshint']
 let g:syntastic_cpp_compiler = 'clang++'
