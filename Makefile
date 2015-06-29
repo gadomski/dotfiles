@@ -23,16 +23,12 @@ VIM_BUNDLE_URLS = \
 	https://github.com/majutsushi/tagbar.git \
 	https://github.com/tpope/vim-projectionist.git \
 	https://github.com/altercation/vim-colors-solarized.git \
-	https://github.com/mklabs/grunt.vim.git \
 	https://github.com/int3/vim-extradite.git \
-	https://github.com/idanarye/vim-merginal.git \
 	https://github.com/octol/vim-cpp-enhanced-highlight.git \
 	https://github.com/kana/vim-operator-user.git \
 	https://github.com/rhysd/vim-clang-format.git \
 	https://github.com/vim-pandoc/vim-pandoc.git \
 	https://github.com/vim-pandoc/vim-pandoc-syntax.git \
-	https://github.com/klen/python-mode \
-	https://github.com/lambdalisue/nose.vim.git \
 	https://github.com/rust-lang/rust.vim.git \
 	https://github.com/cespare/vim-toml.git
 vim_bundle = $(addprefix $(VIM_BUNDLE_DIR)/,$(basename $(notdir $(1))))
