@@ -9,7 +9,6 @@ VIM_BUNDLE_URLS = \
 	https://github.com/LaTeX-Box-Team/LaTeX-Box.git \
 	https://github.com/scrooloose/nerdtree.git \
 	https://github.com/tpope/vim-dispatch.git \
-	https://github.com/tpope/vim-markdown.git \
 	https://github.com/tpope/vim-repeat.git \
 	https://github.com/tpope/vim-sensible.git \
 	https://github.com/tpope/vim-surround.git \
@@ -30,7 +29,8 @@ VIM_BUNDLE_URLS = \
 	https://github.com/vim-pandoc/vim-pandoc.git \
 	https://github.com/vim-pandoc/vim-pandoc-syntax.git \
 	https://github.com/rust-lang/rust.vim.git \
-	https://github.com/cespare/vim-toml.git
+	https://github.com/cespare/vim-toml.git \
+	https://github.com/digitaltoad/vim-jade.git
 vim_bundle = $(addprefix $(VIM_BUNDLE_DIR)/,$(basename $(notdir $(1))))
 VIM_BUNDLES = $(call vim_bundle,$(VIM_BUNDLE_URLS))
 

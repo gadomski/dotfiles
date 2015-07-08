@@ -125,6 +125,12 @@ let g:projectionist_heuristics = {
             \       "make": "ninja-default-in-build-dir",
             \       "dispatch": "ninja-test-in-build-dir"
             \   }
+            \ },
+            \ "Cargo.toml": {
+            \   "*": {
+            \       "make": "cargo build",
+            \       "dispatch": "cargo test"
+            \   }
             \ }}
 
 " Dispatch
