@@ -56,7 +56,6 @@ set guioptions+=m
 
 " Other useful mappings
 nmap <F2> :echo 'Current time is ' . strftime('%c')<CR>
-nnoremap <localleader>w :w<CR>
 nnoremap <localleader>mm :Make<CR>
 nnoremap <localleader>md :Dispatch<CR>
 nnoremap <localleader>co :Copen<CR>
@@ -146,3 +145,8 @@ let g:pandoc#modules#disabled = ["chdir"]
 
 " pymode
 let g:pymode_rope_complete_on_dot = 0
+
+" racer
+set hidden
+let g:racer_cmd = "/Users/gadomski/.vim/bundle/racer/target/release/racer"
+let $RUST_SRC_PATH = "/Users/gadomski/Repos/rust/src"

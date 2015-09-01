@@ -49,7 +49,7 @@ plugins=(git brew osx tmux)
 
 # User configuration
 
-export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
+export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -91,3 +91,6 @@ export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
 [ -f /Users/gadomski/.travis/travis.sh ] && source /Users/gadomski/.travis/travis.sh
 
 source ~/.zsh-tokens
+
+# ENVI
+export LM_LICENSE_FILE="1700@garnet.geosc.uh.edu"
