@@ -67,6 +67,9 @@ export EDITOR='vim'
 # Set the command line edit mode
 bindkey -v
 
+# Set some useful keystrokes for vim mode
+bindkey "^R" history-incremental-search-backward
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
