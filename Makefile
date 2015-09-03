@@ -2,7 +2,9 @@
 
 COMPONENTS=zsh tmux git vim vim-bundles cmake ninja
 VIM_BUNDLE_URLS= \
-		 https://github.com/altercation/vim-colors-solarized.git
+		 https://github.com/altercation/vim-colors-solarized.git \
+		 https://github.com/tpope/vim-dispatch.git \
+		 https://github.com/tpope/vim-fugitive.git
 vim_bundle=$(addprefix vim/bundle/,$(basename $(notdir $(1))))
 VIM_BUNDLES=$(call vim_bundle,$(VIM_BUNDLE_URLS))
 
@@ -31,12 +33,15 @@ vim:
 	ln -s $(CURDIR)/vim/autoload ~/.vim/autoload
 
 vim-bundles: $(VIM_BUNDLES)
-	ln -s $(CURDIR)/vim/bundle ~/.vim/bundle
+	test ! -f ~/.vim/bundle && ln -s $(CURDIR)/vim/bundle ~/.vim/bundle
 
 git:
 	git config --global user.email "pete.gadomski@gmail.com"
 	git config --global user.name "Pete Gadomski"
 	git config --global core.editor vim
+	git config --global core.excludesfile ~/.gitignore_global
+	rm -f ~/.gitignore_global
+	ln -s $(CURDIR)/gitignore_global ~/.gitignore_global
 
 cmake:
 	sudo apt-get install cmake cmake-curses-gui
