@@ -1,1 +1,10 @@
+# The way we build stuff with CMake
 build/
+
+# Vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
