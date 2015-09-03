@@ -3,6 +3,7 @@
 COMPONENTS=zsh tmux git vim vim-bundles cmake ninja
 VIM_BUNDLE_URLS= \
 		 https://github.com/altercation/vim-colors-solarized.git \
+		 https://github.com/bling/vim-airline.git \
 		 https://github.com/tpope/vim-dispatch.git \
 		 https://github.com/tpope/vim-fugitive.git
 vim_bundle=$(addprefix vim/bundle/,$(basename $(notdir $(1))))
@@ -32,8 +33,10 @@ vim:
 	ln -s $(CURDIR)/vimrc ~/.vimrc
 	ln -s $(CURDIR)/vim/autoload ~/.vim/autoload
 
-vim-bundles: $(VIM_BUNDLES)
-	test ! -f ~/.vim/bundle && ln -s $(CURDIR)/vim/bundle ~/.vim/bundle
+vim-bundles: $(VIM_BUNDLES) ~/.vim/bundle
+
+~/.vim/bundle:
+	ln -s $(CURDIR)/vim/bundle ~/.vim/bundle
 
 git:
 	git config --global user.email "pete.gadomski@gmail.com"
