@@ -4,6 +4,8 @@ execute pathogen#infect()
 " The basics
 syntax on
 filetype plugin indent on
+set laststatus=2
+set hlsearch
 
 " Set up solarized
 set background=dark
