@@ -18,3 +18,6 @@ set tabstop=4
 set background=dark
 colorscheme solarized
 highlight Normal ctermbg=none
+
+" Force .md to be markdown instead of modula2
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
