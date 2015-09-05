@@ -2,10 +2,10 @@
 
 COMPONENTS=zsh tmux git vim vim-bundles cmake ninja
 VIM_BUNDLE_URLS= \
-		 https://github.com/altercation/vim-colors-solarized.git \
-		 https://github.com/bling/vim-airline.git \
-		 https://github.com/tpope/vim-dispatch.git \
-		 https://github.com/tpope/vim-fugitive.git
+	https://github.com/altercation/vim-colors-solarized.git \
+	https://github.com/bling/vim-airline.git \
+	https://github.com/tpope/vim-dispatch.git \
+	https://github.com/tpope/vim-fugitive.git
 vim_bundle=$(addprefix vim/bundle/,$(basename $(notdir $(1))))
 VIM_BUNDLES=$(call vim_bundle,$(VIM_BUNDLE_URLS))
 
@@ -20,16 +20,19 @@ zsh:
 	chsh -s /usr/bin/zsh
 	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 	rm ~/.zshrc
-	ln -s $(CURDIR)/zshrc ~/.zshrc 
+	ln -s $(CURDIR)/zshrc ~/.zshrc
 
 tmux:
 	sudo apt-get install tmux
 	rm -f ~/.tmux.conf
 	ln -s $(CURDIR)/tmux.conf ~/.tmux.conf
 
-vim: ~/.vim
+vim: ~/.vim ~/.vimrc
 	sudo apt-get install vim
-	rm -f ~/.vimrc
+
+vim-bundles: $(VIM_BUNDLES) | vim/bundle
+
+~/.vimrc:
 	ln -s $(CURDIR)/vimrc ~/.vimrc
 
 ~/.vim:
