@@ -1,6 +1,7 @@
 # Top level makefile for configuring systems the way I like 'em.
 
-COMPONENTS=zsh tmux git vim vim-bundles cmake ninja
+COMPONENTS=zsh oh-my-zsh-custom tmux git vim vim-bundles cmake ninja
+
 VIM_BUNDLE_URLS= \
 	https://github.com/altercation/vim-colors-solarized.git \
 	https://github.com/bling/vim-airline.git \
@@ -15,12 +16,19 @@ all: $(COMPONENTS)
 .PHONY: $(COMPONENTS)
 
 # We do some mad zsh action, mostly because oh-my-zsh is the bomb.
-zsh:
+zsh: ~/.zhsrc
 	sudo apt-get install zsh
 	chsh -s /usr/bin/zsh
 	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-	rm ~/.zshrc
+	rm -rf ~/.oh-my-zsh/custom
+
+oh-my-zsh-configure: ~/.oh-my-zsh/custom
+
+~/.zshrc:
 	ln -s $(CURDIR)/zshrc ~/.zshrc
+
+~/.oh-my-zsh/custom:
+	ln -s $(CURDIR)/oh-my-zsh-custom ~/.oh-my-zsh/custom
 
 tmux:
 	sudo apt-get install tmux
