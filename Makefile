@@ -27,16 +27,13 @@ tmux:
 	rm -f ~/.tmux.conf
 	ln -s $(CURDIR)/tmux.conf ~/.tmux.conf
 
-vim:
+vim: ~/.vim
 	sudo apt-get install vim
 	rm -f ~/.vimrc
 	ln -s $(CURDIR)/vimrc ~/.vimrc
-	ln -s $(CURDIR)/vim/autoload ~/.vim/autoload
 
-vim-bundles: $(VIM_BUNDLES) ~/.vim/bundle
-
-~/.vim/bundle:
-	ln -s $(CURDIR)/vim/bundle ~/.vim/bundle
+~/.vim:
+	ln -s $(CURDIR)/vim ~/.vim
 
 git:
 	git config --global user.email "pete.gadomski@gmail.com"
