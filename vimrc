@@ -21,3 +21,6 @@ highlight Normal ctermbg=none
 
 " Force .md to be markdown instead of modula2
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Line numbers, doy
+set number
