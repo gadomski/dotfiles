@@ -24,3 +24,17 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Line numbers, doy
 set number
+
+
+"""""""""""""""""
+" Plugin zone
+"""""""""""""""""
+
+" vim-projectionist
+let g:projectionist_heuristics = {
+            \ "build/build.ninja": {
+            \   "*": {
+            \     "make": "ninja\ -C\ build"
+            \   }
+            \ }
+            \ }
