@@ -17,7 +17,7 @@ all: $(COMPONENTS)
 .PHONY: $(COMPONENTS)
 
 # We do some mad zsh action, mostly because oh-my-zsh is the bomb.
-zsh: ~/.zhsrc
+zsh: ~/.zshrc
 	sudo apt-get install zsh
 	chsh -s /usr/bin/zsh
 	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
