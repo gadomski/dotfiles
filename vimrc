@@ -25,6 +25,9 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Line numbers, doy
 set number
 
+" Smart case-sensitivity in searching
+set smartcase
+
 
 """""""""""""""""
 " Plugin zone
