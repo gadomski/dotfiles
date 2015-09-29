@@ -38,3 +38,6 @@ let g:projectionist_heuristics = {
             \   }
             \ }
             \ }
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
