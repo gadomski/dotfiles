@@ -28,6 +28,9 @@ set number
 " Smart case-sensitivity in searching
 set smartcase
 
+" Tab mode in the command bar
+set wildmenu
+
 
 """""""""""""""""
 " Plugin zone
