@@ -47,3 +47,7 @@ let g:projectionist_heuristics = {
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
+
+" gitgutter
+nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
