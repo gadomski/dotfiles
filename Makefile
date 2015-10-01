@@ -3,6 +3,7 @@
 COMPONENTS=zsh oh-my-zsh-custom tmux git vim vim-bundles cmake ninja
 
 VIM_BUNDLE_URLS= \
+    https://github.com/airblade/vim-gitgutter.git \
 	https://github.com/altercation/vim-colors-solarized.git \
 	https://github.com/bling/vim-airline.git \
 	https://github.com/ledger/vim-ledger.git \
