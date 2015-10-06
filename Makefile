@@ -8,6 +8,7 @@ VIM_BUNDLE_URLS= \
 	https://github.com/bling/vim-airline.git \
 	https://github.com/ledger/vim-ledger.git \
 	https://github.com/rhysd/vim-clang-format.git \
+	https://github.com/szw/vim-tags.git \
 	https://github.com/tpope/vim-dispatch.git \
 	https://github.com/tpope/vim-fugitive.git \
 	https://github.com/tpope/vim-projectionist.git \
