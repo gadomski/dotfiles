@@ -51,6 +51,3 @@ let g:airline#extensions#tabline#enabled = 1
 " gitgutter
 nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
-
-" vim-clang
-let g:clang_compilation_database="./build"
