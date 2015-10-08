@@ -51,3 +51,6 @@ let g:airline#extensions#tabline#enabled = 1
 " gitgutter
 nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
+
+" vim-tags
+let g:vim_tags_ctags_binary="noglob ctags"
