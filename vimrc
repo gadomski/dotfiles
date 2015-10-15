@@ -40,7 +40,8 @@ set wildmenu
 let g:projectionist_heuristics = {
             \ "build/build.ninja": {
             \   "*": {
-            \     "make": "ninja\ -C\ build"
+            \     "make": "ninja\ -C\ build",
+            \     "dispatch": "ninja\ -C\ build test"
             \   }
             \ }
             \ }
