@@ -31,6 +31,9 @@ set smartcase
 " Tab mode in the command bar
 set wildmenu
 
+" Load man.vim
+runtime! ftplugin/man.vim
+
 
 """""""""""""""""
 " Plugin zone
