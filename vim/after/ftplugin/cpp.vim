@@ -1,1 +1,1 @@
-set cinoptions+=g0
+set cinoptions+=g0N-s
