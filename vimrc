@@ -46,6 +46,12 @@ let g:projectionist_heuristics = {
             \     "make": "ninja\ -C\ build",
             \     "dispatch": "ninja\ -C build && CTEST_OUTPUT_ON_FAILURE=1\ ninja\ -C\ build test"
             \   }
+            \ },
+            \ "Cargo.toml": {
+            \   "*": {
+            \     "make": "cargo build",
+            \     "dispatch": "cargo test"
+            \   }
             \ }
             \ }
 
