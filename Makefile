@@ -9,6 +9,7 @@ VIM_BUNDLE_URLS= \
 	https://github.com/cespare/vim-toml.git \
 	https://github.com/ledger/vim-ledger.git \
 	https://github.com/petRUShka/vim-opencl.git \
+	https://github.com/racer-rust/vim-racer.git \
 	https://github.com/rhysd/vim-clang-format.git \
 	https://github.com/scrooloose/syntastic.git \
 	https://github.com/szw/vim-tags.git \
