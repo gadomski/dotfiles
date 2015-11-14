@@ -6,3 +6,7 @@ hyperspectral
 filesystem
 runtimes
 OpenMP
+GPU
+octree
+pointcloud
+Gadomski
