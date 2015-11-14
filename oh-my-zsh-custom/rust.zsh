@@ -1,1 +1,1 @@
-export RUST_SRC_PATH="$HOME/Repos/rust"
+export RUST_SRC_PATH="$HOME/Repos/rust/src"
