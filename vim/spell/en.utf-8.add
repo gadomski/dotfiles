@@ -10,3 +10,8 @@ GPU
 octree
 pointcloud
 Gadomski
+LiDAR
+georeference
+GNSS
+IMU
+georeferencing
