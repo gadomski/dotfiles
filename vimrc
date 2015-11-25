@@ -34,6 +34,9 @@ set wildmenu
 " Delete autoindents
 set backspace=indent
 
+" Local leader
+let mapleader=","
+
 " Load man.vim
 runtime! ftplugin/man.vim
 
@@ -63,6 +66,8 @@ let g:airline#extensions#tabline#enabled = 1
 " gitgutter
 nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
+nmap <Leader>hs <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterRevertHunk
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
