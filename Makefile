@@ -19,6 +19,7 @@ VIM_BUNDLE_URLS= \
 	https://github.com/tpope/vim-projectionist.git \
 	https://github.com/tpope/vim-surround.git \
 	https://github.com/tpope/vim-unimpaired.git \
+	https://github.com/tpope/vim-vinegar.git \
 	https://github.com/vim-pandoc/vim-pandoc-syntax.git \
 	https://github.com/rust-lang/rust.vim.git
 vim_bundle=$(addprefix vim/bundle/,$(basename $(notdir $(1))))
