@@ -52,11 +52,6 @@ let g:projectionist_heuristics = {
             \     "make": "ninja\ -C\ build",
             \     "dispatch": "ninja\ -C build && CTEST_OUTPUT_ON_FAILURE=1\ ninja\ -C\ build test"
             \   }
-            \ },
-            \ "Cargo.toml": {
-            \   "*": {
-            \     "dispatch": "cargo test --color=never -- --color=never"
-            \   }
             \ }
             \ }
 
@@ -80,3 +75,8 @@ let g:syntastic_cpp_clang_check_post_args = "-p build/compile_commands.json"
 
 " vim-tags
 let g:vim_tags_ctags_binary="noglob ctags"
+
+" vim-cargo
+let g:cargo_command = "Dispatch cargo {cmd}"
+nmap <Leader>cb :call cargo#run('build')<CR>
+nmap <Leader>ct :call cargo#run('test')<CR>
