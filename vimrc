@@ -75,6 +75,7 @@ let g:syntastic_cpp_clang_check_post_args = "-p build/compile_commands.json"
 
 " vim-tags
 let g:vim_tags_ctags_binary="noglob ctags"
+let g:vim_tags_auto_generate=0
 
 " vim-cargo
 let g:cargo_command = "Dispatch cargo {cmd}"
