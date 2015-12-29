@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/.multirust/toolchains/beta/cargo/bin"
+export PATH="$PATH:$HOME/.multirust/toolchains/stable/cargo/bin"
 export RUST_SRC_PATH="$HOME/Repos/rust/src"
 alias cb="cargo build"
 alias cbr="cargo build --release"
