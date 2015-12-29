@@ -1,6 +1,6 @@
 # Top level makefile for configuring systems the way I like 'em.
 
-COMPONENTS=zsh oh-my-zsh-custom tmux git vim vim-bundles cmake ninja
+COMPONENTS=zsh tmux git vim vim-bundles
 
 VIM_BUNDLE_URLS= \
     https://github.com/airblade/vim-gitgutter.git \
@@ -33,26 +33,17 @@ all: $(COMPONENTS)
 
 # We do some mad zsh action, mostly because oh-my-zsh is the bomb.
 zsh: ~/.zshrc
-	sudo apt-get install zsh
-	chsh -s /usr/bin/zsh
 	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-	rm -rf ~/.oh-my-zsh/custom
-
-oh-my-zsh-configure: ~/.oh-my-zsh/custom
 
 ~/.zshrc:
 	ln -s $(CURDIR)/zshrc ~/.zshrc
 
-~/.oh-my-zsh/custom:
-	ln -s $(CURDIR)/oh-my-zsh-custom ~/.oh-my-zsh/custom
+tmux: ~/.tmux.conf
 
-tmux:
-	sudo apt-get install tmux
-	rm -f ~/.tmux.conf
+~/.tmux.conf:
 	ln -s $(CURDIR)/tmux.conf ~/.tmux.conf
 
 vim: ~/.vim ~/.vimrc
-	sudo apt-get install vim
 
 vim-bundles: $(VIM_BUNDLES) | vim/bundle
 
@@ -62,20 +53,14 @@ vim-bundles: $(VIM_BUNDLES) | vim/bundle
 ~/.vim:
 	ln -s $(CURDIR)/vim ~/.vim
 
-git:
+git: ~/.gitignore_global
 	git config --global user.email "pete.gadomski@gmail.com"
 	git config --global user.name "Pete Gadomski"
 	git config --global core.editor vim
 	git config --global core.excludesfile ~/.gitignore_global
-	rm -f ~/.gitignore_global
+
+~/.gitignore_global:
 	ln -s $(CURDIR)/gitignore_global ~/.gitignore_global
-
-cmake:
-	sudo apt-get install cmake cmake-curses-gui
-
-ninja:
-	sudo apt-get install ninja-build
-
 
 # Some magic to set up a target for each bundle
 define VIM_BUNDLE_template
