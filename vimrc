@@ -79,3 +79,6 @@ let g:vim_tags_auto_generate=0
 
 " rust.vim
 let g:rustfmt_autosave=1
+
+" clang-format
+let g:clang_format#auto_format=1
