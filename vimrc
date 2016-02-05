@@ -81,4 +81,8 @@ let g:vim_tags_auto_generate=0
 let g:rustfmt_autosave=1
 
 " clang-format
-let g:clang_format#auto_format=1
+augroup ClangFormatSettings
+    autocmd!
+    autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+    autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+augroup END
