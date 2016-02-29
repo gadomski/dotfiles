@@ -35,7 +35,7 @@ set wildmenu
 set backspace=indent
 
 " Local leader
-let mapleader=","
+let mapleader=" "
 
 " Load man.vim
 runtime! ftplugin/man.vim
