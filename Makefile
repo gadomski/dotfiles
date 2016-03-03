@@ -1,6 +1,6 @@
 # Top level makefile for configuring systems the way I like 'em.
 
-COMPONENTS=zsh tmux git vim vim-bundles
+COMPONENTS=zsh oh-my-zsh tmux git vim vim-bundles
 
 VIM_BUNDLE_URLS= \
     https://github.com/airblade/vim-gitgutter.git \
@@ -38,6 +38,11 @@ zsh: ~/.zshrc
 
 ~/.zshrc:
 	ln -s $(CURDIR)/zshrc ~/.zshrc
+
+oh-my-zsh: ~/.oh-my-zsh/custom
+
+~/.oh-my-zsh/custom:
+	ln -s $(CURDIR)/oh-my-zsh-custom $@
 
 tmux: ~/.tmux.conf
 
