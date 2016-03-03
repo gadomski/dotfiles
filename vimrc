@@ -49,7 +49,6 @@ runtime! ftplugin/man.vim
 let g:projectionist_heuristics = {
             \ "build/build.ninja": {
             \   "*": {
-            \     "make": "ninja\ -C\ build",
             \     "dispatch": "ninja\ -C build && CTEST_OUTPUT_ON_FAILURE=1\ ninja\ -C\ build test"
             \   }
             \ }
