@@ -36,6 +36,7 @@ set backspace=indent
 
 " Local leader
 let mapleader=" "
+let maplocalleader=" "
 
 " Load man.vim
 runtime! ftplugin/man.vim

@@ -21,6 +21,7 @@ VIM_BUNDLE_URLS= \
 	https://github.com/tpope/vim-surround.git \
 	https://github.com/tpope/vim-unimpaired.git \
 	https://github.com/tpope/vim-vinegar.git \
+	https://github.com/lervag/vimtex \
 	https://github.com/vim-pandoc/vim-pandoc-syntax.git \
 	https://github.com/vim-scripts/DoxygenToolkit.vim.git \
 	https://github.com/rust-lang/rust.vim.git
