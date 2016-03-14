@@ -13,6 +13,7 @@ VIM_BUNDLE_URLS= \
 	https://github.com/racer-rust/vim-racer.git \
 	https://github.com/rhysd/vim-clang-format.git \
 	https://github.com/scrooloose/syntastic.git \
+	https://github.com/sjl/vitality.vim.git \
 	https://github.com/szw/vim-tags.git \
 	https://github.com/tpope/vim-dispatch.git \
 	https://github.com/tpope/vim-fugitive.git \
