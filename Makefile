@@ -3,15 +3,16 @@
 COMPONENTS=zsh oh-my-zsh tmux git vim vim-bundles
 
 VIM_BUNDLE_URLS= \
-    https://github.com/airblade/vim-gitgutter.git \
 	https://github.com/altercation/vim-colors-solarized.git \
 	https://github.com/bling/vim-airline.git \
 	https://github.com/cespare/vim-toml.git \
 	https://github.com/Chiel92/vim-autoformat.git \
 	https://github.com/ledger/vim-ledger.git \
+	https://github.com/lervag/vimtex \
 	https://github.com/petRUShka/vim-opencl.git \
 	https://github.com/racer-rust/vim-racer.git \
 	https://github.com/rhysd/vim-clang-format.git \
+	https://github.com/rust-lang/rust.vim.git \
 	https://github.com/scrooloose/syntastic.git \
 	https://github.com/sjl/vitality.vim.git \
 	https://github.com/szw/vim-tags.git \
@@ -22,10 +23,9 @@ VIM_BUNDLE_URLS= \
 	https://github.com/tpope/vim-surround.git \
 	https://github.com/tpope/vim-unimpaired.git \
 	https://github.com/tpope/vim-vinegar.git \
-	https://github.com/lervag/vimtex \
 	https://github.com/vim-pandoc/vim-pandoc-syntax.git \
 	https://github.com/vim-scripts/DoxygenToolkit.vim.git \
-	https://github.com/rust-lang/rust.vim.git
+    https://github.com/airblade/vim-gitgutter.git
 vim_bundle=$(addprefix vim/bundle/,$(basename $(notdir $(1))))
 VIM_BUNDLES=$(call vim_bundle,$(VIM_BUNDLE_URLS))
 
