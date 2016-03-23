@@ -80,6 +80,11 @@ let g:vim_tags_auto_generate=0
 " rust.vim
 let g:rustfmt_autosave=1
 
+" vim-cargo
+let g:cargo_command = "Dispatch cargo {cmd} --color never"
+nmap <Leader>cb :CargoBuild<CR>
+nmap <Leader>ct :CargoTest<CR>
+
 " clang-format
 augroup ClangFormatSettings
     autocmd!
