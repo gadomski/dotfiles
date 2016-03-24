@@ -72,6 +72,7 @@ let g:syntastic_c_checkers = ["clang_check"]
 let g:syntastic_c_clang_check_post_args = "-p build/compile_commands.json"
 let g:syntastic_cpp_checkers = ["clang_check"]
 let g:syntastic_cpp_clang_check_post_args = "-p build/compile_commands.json"
+let g:syntastic_rst_checkers = ["sphinx"]
 
 " vim-tags
 let g:vim_tags_ctags_binary="noglob ctags"
