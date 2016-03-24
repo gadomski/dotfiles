@@ -8,6 +8,8 @@ VIM_BUNDLE_URLS= \
 	https://github.com/cespare/vim-toml.git \
 	https://github.com/Chiel92/vim-autoformat.git \
 	https://github.com/junegunn/goyo.vim.git \
+	https://github.com/justinmk/vim-gtfo.git \
+	https://github.com/justinmk/vim-sneak.git \
 	https://github.com/ledger/vim-ledger.git \
 	https://github.com/lervag/vimtex \
 	https://github.com/petRUShka/vim-opencl.git \
