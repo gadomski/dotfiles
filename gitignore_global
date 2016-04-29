@@ -1,5 +1,6 @@
 # OSX
 .DS_Store
+Icon?
 
 # The way we build stuff with CMake
 build/
