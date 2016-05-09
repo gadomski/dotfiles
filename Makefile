@@ -6,7 +6,6 @@ VIM_BUNDLE_URLS= \
 	https://github.com/altercation/vim-colors-solarized.git \
 	https://github.com/bling/vim-airline.git \
 	https://github.com/cespare/vim-toml.git \
-	https://github.com/Chiel92/vim-autoformat.git \
 	https://github.com/fatih/vim-go.git \
 	https://github.com/junegunn/goyo.vim.git \
 	https://github.com/justinmk/vim-gtfo.git \
