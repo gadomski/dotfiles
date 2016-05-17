@@ -19,7 +19,6 @@ VIM_BUNDLE_URLS= \
 	https://github.com/scrooloose/syntastic.git \
 	https://github.com/sjl/vitality.vim.git \
 	https://github.com/szw/vim-tags.git \
-	https://github.com/timonv/vim-cargo \
 	https://github.com/tpope/vim-dispatch.git \
 	https://github.com/tpope/vim-fugitive.git \
 	https://github.com/tpope/vim-projectionist.git \
