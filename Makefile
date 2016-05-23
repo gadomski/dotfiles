@@ -15,6 +15,7 @@ VIM_BUNDLE_URLS= \
 	https://github.com/petRUShka/vim-opencl.git \
 	https://github.com/racer-rust/vim-racer.git \
 	https://github.com/rhysd/vim-clang-format.git \
+	https://github.com/rhysd/rust-doc.vim.git \
 	https://github.com/rust-lang/rust.vim.git \
 	https://github.com/scrooloose/syntastic.git \
 	https://github.com/sjl/vitality.vim.git \

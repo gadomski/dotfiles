@@ -89,6 +89,9 @@ let g:vim_tags_auto_generate=0
 " rust.vim
 let g:rustfmt_autosave=1
 
+" rust-doc
+let g:rust_doc#downloaded_rust_doc_dir = "/usr/local"
+
 " clang-format
 augroup ClangFormatSettings
     autocmd!
