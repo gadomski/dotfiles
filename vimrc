@@ -24,6 +24,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Line numbers, doy
 set number
+set relativenumber
 
 " Smart case-sensitivity in searching
 set smartcase
@@ -51,6 +52,12 @@ let g:projectionist_heuristics = {
             \ "build/build.ninja": {
             \   "*": {
             \     "dispatch": "ninja\ -C build && CTEST_OUTPUT_ON_FAILURE=1\ ninja\ -C\ build test"
+            \   }
+            \ },
+            \ "Cargo.toml": {
+            \   "*":  {
+            \     "make": "cargo build --color never",
+            \     "dispatch": "cargo test --color never -- --color never"
             \   }
             \ }
             \ }
