@@ -7,6 +7,7 @@ VIM_BUNDLE_URLS= \
 	https://github.com/bling/vim-airline.git \
 	https://github.com/cespare/vim-toml.git \
 	https://github.com/fatih/vim-go.git \
+	https://github.com/JamshedVesuna/vim-markdown-preview.git \
 	https://github.com/junegunn/goyo.vim.git \
 	https://github.com/justinmk/vim-gtfo.git \
 	https://github.com/justinmk/vim-sneak.git \
@@ -14,8 +15,8 @@ VIM_BUNDLE_URLS= \
 	https://github.com/lervag/vimtex \
 	https://github.com/petRUShka/vim-opencl.git \
 	https://github.com/racer-rust/vim-racer.git \
-	https://github.com/rhysd/vim-clang-format.git \
 	https://github.com/rhysd/rust-doc.vim.git \
+	https://github.com/rhysd/vim-clang-format.git \
 	https://github.com/rust-lang/rust.vim.git \
 	https://github.com/scrooloose/syntastic.git \
 	https://github.com/sjl/vitality.vim.git \
