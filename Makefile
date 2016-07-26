@@ -14,6 +14,7 @@ VIM_BUNDLE_URLS= \
 	https://github.com/justinmk/vim-sneak.git \
 	https://github.com/ledger/vim-ledger.git \
 	https://github.com/lervag/vimtex.git \
+	https://github.com/mustache/vim-mustache-handlebars.git \
 	https://github.com/pangloss/vim-javascript.git \
 	https://github.com/petRUShka/vim-opencl.git \
 	https://github.com/racer-rust/vim-racer.git \
