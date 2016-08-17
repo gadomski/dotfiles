@@ -56,8 +56,8 @@ let g:projectionist_heuristics = {
             \ },
             \ "Cargo.toml": {
             \   "*":  {
-            \     "make": "cargo build --color never",
-            \     "dispatch": "cargo test --color never -- --color never"
+            \     "make": "cargo build",
+            \     "dispatch": "cargo test"
             \   }
             \ }
             \ }
