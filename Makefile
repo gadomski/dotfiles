@@ -18,6 +18,7 @@ VIM_BUNDLE_URLS= \
 	https://github.com/pangloss/vim-javascript.git \
 	https://github.com/petRUShka/vim-opencl.git \
 	https://github.com/racer-rust/vim-racer.git \
+	https://github.com/radenling/vim-dispatch-neovim.git \
 	https://github.com/rhysd/rust-doc.vim.git \
 	https://github.com/rhysd/vim-clang-format.git \
 	https://github.com/rust-lang/rust.vim.git \
