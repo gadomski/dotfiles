@@ -72,7 +72,7 @@ vim-bundles: $(VIM_BUNDLES) | vim/bundle
 git: ~/.gitignore_global ~/.git_template
 	git config --global user.email "pete.gadomski@gmail.com"
 	git config --global user.name "Pete Gadomski"
-	git config --global core.editor vim
+	git config --global core.editor nvim
 	git config --global core.excludesfile ~/.gitignore_global
 	git config --global init.templatedir ~/.git_template
 
