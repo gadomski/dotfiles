@@ -47,21 +47,6 @@ runtime! ftplugin/man.vim
 " Plugin zone
 """""""""""""""""
 
-" vim-projectionist
-let g:projectionist_heuristics = {
-            \ "build/build.ninja": {
-            \   "*": {
-            \     "dispatch": "ninja\ -C build && CTEST_OUTPUT_ON_FAILURE=1\ ninja\ -C\ build test"
-            \   }
-            \ },
-            \ "Cargo.toml": {
-            \   "*":  {
-            \     "make": "cargo build",
-            \     "dispatch": "cargo test"
-            \   }
-            \ }
-            \ }
-
 " airline
 let g:airline#extensions#tabline#enabled = 1
 
@@ -70,17 +55,6 @@ nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
 nmap <Leader>hs <Plug>GitGutterStageHunk
 nmap <Leader>hr <Plug>GitGutterRevertHunk
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_c_checkers = ["clang_check"]
-let g:syntastic_c_clang_check_post_args = "-p build/compile_commands.json"
-let g:syntastic_cpp_checkers = ["clang_check"]
-let g:syntastic_cpp_clang_check_post_args = "-p build/compile_commands.json"
-let g:syntastic_cpp_clang_tidy_post_args = "-p build/compile_commands.json"
-let g:syntastic_rst_checkers = ["sphinx"]
 
 " vim-tags
 let g:vim_tags_ctags_binary="noglob ctags"
@@ -93,11 +67,13 @@ let g:rustfmt_autosave=1
 let g:rust_doc#downloaded_rust_doc_dir = "/usr/local"
 
 " clang-format
-augroup ClangFormatSettings
-    autocmd!
-    autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-    autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
-augroup END
+let g:clang_format#auto_format=1
 
 " doxygen
 let g:load_doxygen_syntax=1
+
+" neomake
+autocmd! BufWritePost * Neomake
+nmap <Leader>nm :Neomake!<CR>
+let g:neomake_cpp_enabled_makers = ["clangcheck"]
+let g:neomake_cpp_clangcheck_args = ["-p", "build"]
