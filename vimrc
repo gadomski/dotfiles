@@ -74,6 +74,27 @@ let g:load_doxygen_syntax=1
 
 " neomake
 autocmd! BufWritePost * Neomake
-nmap <Leader>nm :Neomake!<CR>
-let g:neomake_cpp_enabled_makers = ["clangcheck"]
+let g:neomake_cmake_maker = {
+            \ "exe": "cmake",
+            \ "args": [".."],
+            \ "cwd": "build",
+            \ "remove_invalid_entries": 0,
+            \ }
+let g:neomake_ctest_maker = {
+            \ "exe": "ctest",
+            \ "args": ["--output-on-failure"],
+            \ "cwd": "build",
+            \ "remove_invalid_entries": 0,
+            \ }
+let g:neomake_cargotest_maker = {
+            \ "exe": "cargo",
+            \ "args": ["test"],
+            \ "remove_invalid_entries": 0,
+            \}
+nmap <Leader>nb :Neomake!<CR>
+nmap <Leader>nt :Neomake! ctest<CR>
+nmap <Leader>nc :Neomake! cmake<CR>
+nmap <Leader>ct :Neomake! cargotest<CR>
+let g:neomake_cpp_enabled_makers = ["clangtidy", "clangcheck"]
 let g:neomake_cpp_clangcheck_args = ["-p", "build"]
+let g:neomake_cpp_clangtidy_args = ["-p", "build"]
