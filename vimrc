@@ -56,10 +56,6 @@ nmap ]h <Plug>GitGutterNextHunk
 nmap <Leader>hs <Plug>GitGutterStageHunk
 nmap <Leader>hr <Plug>GitGutterRevertHunk
 
-" vim-tags
-let g:vim_tags_ctags_binary="noglob ctags"
-let g:vim_tags_auto_generate=0
-
 " rust.vim
 let g:rustfmt_autosave=1
 

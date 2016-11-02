@@ -17,7 +17,6 @@ VIM_BUNDLE_URLS= \
 	https://github.com/rhysd/rust-doc.vim.git \
 	https://github.com/rhysd/vim-clang-format.git \
 	https://github.com/rust-lang/rust.vim.git \
-	https://github.com/szw/vim-tags.git \
 	https://github.com/tell-k/vim-autopep8.git \
 	https://github.com/tpope/vim-fugitive.git \
 	https://github.com/tpope/vim-repeat.git \
