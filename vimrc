@@ -69,6 +69,9 @@ let g:rust_doc#downloaded_rust_doc_dir = "/usr/local"
 " clang-format
 let g:clang_format#auto_format=1
 
+" autopep8
+let g:autopep8_disable_show_diff=1
+
 " doxygen
 let g:load_doxygen_syntax=1
 
