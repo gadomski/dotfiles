@@ -39,9 +39,6 @@ set backspace=indent
 let mapleader=" "
 let maplocalleader=" "
 
-" Load man.vim
-runtime! ftplugin/man.vim
-
 
 """""""""""""""""
 " Plugin zone
