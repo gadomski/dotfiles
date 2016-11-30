@@ -1,8 +1,13 @@
-default: ~/.zshrc ~/.config/nvim ~/.gitconfig ~/.git_template ~/.gitignore_global
+zsh_custom_files:=$(wildcard custom/*.zsh)
+
+default: ~/.zshrc $(addprefix $(HOME)/.oh-my-zsh/,$(zsh_custom_files)) ~/.config/nvim ~/.gitconfig ~/.git_template ~/.gitignore_global
 .PHONY: default
 
 # zsh
 ~/.zshrc: zshrc
+	ln -s $(realpath $<) $@
+
+~/.oh-my-zsh/custom/%.zsh: custom/%.zsh
 	ln -s $(realpath $<) $@
 
 # neovim
