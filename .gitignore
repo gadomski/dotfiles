@@ -2,3 +2,4 @@ vim/bundle
 vim/.netrwhist
 oh-my-zsh-custom/github.zsh
 oh-my-zsh-custom/local.zsh
+nvim/plugged
