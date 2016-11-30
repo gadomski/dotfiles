@@ -1,0 +1,15 @@
+[user]
+	email = pete.gadomski@gmail.com
+	name = Pete Gadomski
+[core]
+	editor = nvim
+	excludesfile = /Users/rdcrlpjg/.gitignore_global
+[init]
+	templatedir = /Users/rdcrlpjg/.git_template
+[hub]
+	protocol = https
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -1,4 +1,4 @@
-default: ~/.zshrc ~/.config/nvim ~/.git_template ~/.gitignore_global
+default: ~/.zshrc ~/.config/nvim ~/.gitconfig ~/.git_template ~/.gitignore_global
 .PHONY: default
 
 # zsh
@@ -10,6 +10,9 @@ default: ~/.zshrc ~/.config/nvim ~/.git_template ~/.gitignore_global
 	ln -s $(realpath $<) $@
 
 # git
+~/.gitconfig: gitconfig
+	ln -s $(realpath $<) $@
+
 ~/.git_template: git_template
 	ln -s $(realpath $<) $@
 
