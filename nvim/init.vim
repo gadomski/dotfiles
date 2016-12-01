@@ -4,6 +4,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'kana/vim-operator-user'
 Plug 'neomake/neomake'
 Plug 'rhysd/vim-clang-format'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 syntax enable
