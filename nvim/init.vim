@@ -1,8 +1,10 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
+Plug 'cespare/vim-toml'
 Plug 'kana/vim-operator-user'
 Plug 'neomake/neomake'
+Plug 'racer-rust/vim-racer'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
