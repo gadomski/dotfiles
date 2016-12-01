@@ -1,9 +1,16 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
 Plug 'kana/vim-operator-user'
 Plug 'neomake/neomake'
 Plug 'rhysd/vim-clang-format'
 call plug#end()
+
+syntax enable
+set background=dark
+colorscheme solarized
+
+let mapleader = "\<Space>"
 
 " neomake
 autocmd! BufWritePost * Neomake
