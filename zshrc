@@ -7,3 +7,4 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/bin:$HOME/local/bin:$PATH"
+bindkey -v
