@@ -8,8 +8,10 @@ Plug 'racer-rust/vim-racer'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -20,6 +22,10 @@ colorscheme solarized
 
 let mapleader = '\<Space>'
 
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
 set number
 set relativenumber
 
