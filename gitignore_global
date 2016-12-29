@@ -12,3 +12,6 @@ build/
 Session.vim
 .netrwhist
 *~
+
+# Python
+*.ropeproject
