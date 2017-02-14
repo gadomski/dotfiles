@@ -11,7 +11,8 @@ default: ~/.zshrc $(addprefix $(HOME)/.oh-my-zsh/,$(zsh_custom_files)) ~/.config
 	ln -s $(realpath $<) $@
 
 # neovim
-~/.config/nvim: nvim | ~/.config
+~/.config/nvim: nvim
+	mkdir -p ~/.config
 	ln -s $(realpath $<) $@
 
 # git
