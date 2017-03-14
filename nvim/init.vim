@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'cespare/vim-toml'
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kana/vim-operator-user'
 Plug 'klen/python-mode'
 Plug 'neomake/neomake'
@@ -22,7 +23,7 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-let mapleader = '\<Space>'
+let mapleader=' '
 
 filetype plugin indent on
 set tabstop=4
@@ -47,3 +48,6 @@ let g:airline_theme = 'solarized'
 
 " vim-clang-format
 let g:clang_format#auto_format = 1
+
+" vim-gitgutter
+let g:gitgutter_map_keys = 1
