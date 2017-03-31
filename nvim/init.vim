@@ -46,8 +46,5 @@ let g:airline#extensions#tabline#enabled = 1
 " vim-airline-themes
 let g:airline_theme = 'solarized'
 
-" vim-clang-format
-let g:clang_format#auto_format = 1
-
 " vim-gitgutter
 let g:gitgutter_map_keys = 1
