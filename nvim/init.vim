@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'cespare/vim-toml'
+Plug 'farmergreg/vim-lastplace'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kana/vim-operator-user'
 Plug 'klen/python-mode'
