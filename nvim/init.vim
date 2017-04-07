@@ -49,3 +49,6 @@ let g:airline_theme = 'solarized'
 
 " vim-gitgutter
 let g:gitgutter_map_keys = 1
+
+" vim-clang-format
+let g:clang_format#auto_format = 1
