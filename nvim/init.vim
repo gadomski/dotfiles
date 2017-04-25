@@ -37,19 +37,10 @@ set tabstop=4
 set shiftwidth=4
 
 " neomake
-augroup neomake
-    autocmd!
-    autocmd BufWritePost * Neomake
-augroup END
+autocmd BufWritePost * Neomake
 let g:neomake_cmake_maker = { 'exe': 'cmake', 'args': ['--build', 'build'] }
 let g:neomake_ninja_maker = { 'exe': 'ninja', 'args': ['-C', 'build'] }
 let g:neomake_ninjatest_maker = { 'exe': 'ninja', 'args': ['-C', 'build', 'test'] }
-
-" neoformat
-augroup neoformat
-    autocmd!
-    autocmd! BufWritePre * Neoformat
-augroup END
 
 " rust.vim
 let g:rustfmt_autosave = 1
