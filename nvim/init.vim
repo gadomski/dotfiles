@@ -57,3 +57,7 @@ let g:airline_theme = 'solarized'
 
 " vim-gitgutter
 let g:gitgutter_map_keys = 1
+
+" rusty-ctags
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!
