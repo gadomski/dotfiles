@@ -7,6 +7,7 @@ plugins=(git osx tmux vagrant vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/bin:$HOME/local/bin:$PATH"
+export DISABLE_AUTO_TITLE=true
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 
