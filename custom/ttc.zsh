@@ -2,7 +2,8 @@
 # The first in the list is read by the party parrot.
 export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
 
-TTC_SAY_BOX='panda'
+export TTC_GITBOT='gitlog'
+export TTC_SAY_BOX='panda'
 
 # List of folders to look into for `git` commits, comma separated.
 export TTC_REPOS='~/Repos'
