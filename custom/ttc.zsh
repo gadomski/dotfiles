@@ -1,6 +1,6 @@
 # List of accounts to read the last tweet from, comma separated
 # The first in the list is read by the party parrot.
-export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
+export TTC_BOTS='dog_feelings,tinycarebot,selfcare_bot'
 
 export TTC_GITBOT='gitlog'
 export TTC_SAY_BOX='panda'
