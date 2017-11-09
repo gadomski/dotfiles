@@ -15,3 +15,7 @@
 	required = true
 [push]
 	default = simple
+[gui]
+	recentrepo = /Users/rdcrlpjg/Repos/las-rs
+[cola]
+	spellcheck = false
