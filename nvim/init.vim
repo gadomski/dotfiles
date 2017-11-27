@@ -42,7 +42,9 @@ set tabstop=4
 set shiftwidth=4
 
 " neomake
-autocmd BufWritePost * Neomake
+augroup NeoMake
+    autocmd BufWritePost * Neomake
+augroup end
 let g:neomake_cmake_maker = { 'exe': 'cmake', 'args': ['--build', 'build'] }
 let g:neomake_ninja_maker = { 'exe': 'ninja', 'args': ['-C', 'build'] }
 let g:neomake_ninjatest_maker = { 'exe': 'ninja', 'args': ['-C', 'build', 'test'] }
@@ -60,5 +62,7 @@ let g:airline_theme = 'solarized'
 let g:gitgutter_map_keys = 1
 
 " rusty-tags
-autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
-autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!
+augroup RustyTags
+    autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+    autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
+augroup end
