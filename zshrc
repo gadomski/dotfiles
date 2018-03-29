@@ -10,5 +10,3 @@ source $ZSH/oh-my-zsh.sh
 export DISABLE_AUTO_TITLE=true
 bindkey -v
 bindkey "^R" history-incremental-search-backward
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
