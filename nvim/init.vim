@@ -32,6 +32,7 @@ set background=dark
 colorscheme solarized
 
 let mapleader=' '
+let maplocalleader=' '
 
 filetype plugin indent on
 set tabstop=4
@@ -67,3 +68,6 @@ augroup RustyTags
     autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
     autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
 augroup end
+
+" vimtex
+let g:vimtex_view_method = 'skim'
