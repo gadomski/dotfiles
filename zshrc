@@ -3,7 +3,7 @@ export PATH="$HOME/bin:$HOME/local/bin:/usr/local/bin:$PATH"
 
 ZSH_THEME="dieter"
 HIST_STAMPS="yyyy-mm-dd"
-plugins=(git osx tmux tmuxinator vagrant vi-mode)
+plugins=(git osx tmux vagrant vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
